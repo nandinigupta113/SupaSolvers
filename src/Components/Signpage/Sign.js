@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Sign.css";
 import logo from "../../Assets/SSlogo.png";
-
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-const SignIn = () => {
+import SignIncomp from "./SignIn/SignIncomp";
+import Signupcomp from "./SignUp/Signupcomp";
+const Sign = () => {
+  const [choice, setChoice] = useState("SignIn");
   return (
     <>
       <img className="signlogo" src={logo} />
@@ -16,35 +17,27 @@ const SignIn = () => {
             <span className="welcome">Welcomes You</span>
           </div>
           <div className="layer2">
-            <button id="signInbtn" className="btn">
+            <button
+              onClick={(e) => setChoice(e.target.value)}
+              className={choice === "SignIn" ? "selectsignbtn" : "btn"}
+              value="SignIn"
+            >
               Sign In
             </button>
-            <button id="signUpbtn" className="btn">
+            <button
+              onClick={(e) => setChoice(e.target.value)}
+              className={choice === "SignUp" ? "selectsignbtn" : "btn"}
+              value="SignUp"
+            >
               Sign Up
             </button>
           </div>
-          <div className="userlogo">
-              <AccountCircleIcon sx={{ borderRadius:'100rem', bgcolor:"white", height: "5rem", width: "5rem" }} />
-            </div>
-          <div className="layer3">
-            <div className="Userbox">
-                <div className="text1" id="text">
-                    <span></span>
-                   <input placeholder="User Id"/>
-                </div>
-                <div className="text1">
-                <span></span>
-                    <input placeholder="Password"/>
-                </div>
-                <div className="signbtn">
-                    <button>Sign In</button>
-                </div>
-            </div>
-          </div>
+
+          <>{choice === "SignIn" ? <SignIncomp /> : <Signupcomp />}</>
         </div>
       </div>
     </>
   );
 };
 
-export default SignIn;
+export default Sign;

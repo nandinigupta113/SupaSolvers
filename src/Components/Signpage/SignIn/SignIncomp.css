@@ -1,0 +1,59 @@
+
+.userlogo{
+    position:relative;
+    display: flex;
+    justify-content:center;
+    margin-bottom: -3.6rem;
+    margin-top: 2rem;
+}
+.layer3{
+    width: 50vw;
+}
+.Userbox{
+    width: 25vw;
+    background: linear-gradient(136.66deg, #2C3F88 8.33%, #009EDD 96.9%);
+    border-radius: 1rem;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.text1{
+    display: flex;
+    justify-content: center;
+    margin:0.5rem;
+}
+.text1 input{
+    height: 2.5rem;
+    width:18vw;
+    background-color:white;
+    border-radius: 0.2rem;
+    font-size: 1rem;
+    padding: 1rem;
+}
+.text1 span{
+    position: relative;
+    width:0.3rem;
+    height:2.2rem;
+    background: #2B96CC;
+    margin-right:-0.5rem;
+    margin-top: 0.15rem;
+    border-radius: 2rem;
+}
+#text{
+    margin-top: 3rem;
+}
+.signbtn{
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+}
+.signbtn button{
+    background: #000;
+    color: white;
+    height: 2.5rem;
+    width: 15rem;
+    font-size:1.2rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+}
