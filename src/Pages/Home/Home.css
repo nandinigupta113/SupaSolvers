@@ -1,0 +1,66 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.basecover{
+    display: flex;
+    justify-content: center;
+}
+.base{
+    background: center center no-repeat url('../../Assets/hospitalimg.png');
+    height: 80vh;
+    width:100vw;
+    background-size:auto;
+    margin-right: 0;
+    overflow:hidden;
+}
+
+.tagline{
+    font-size: 3rem;
+    color: white;
+    display: flex;
+    margin-left: 10vw;
+    margin-top: 10vh;
+}
+.tagline span{
+    width: 45rem; 
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 4px #8490a9;
+    font-family: 'Ramabhadra', sans-serif;
+}
+
+.logodiv{
+    margin-top: 1rem;
+    margin-left: 10vw;
+}
+.options{
+    display: flex;
+}
+.opchoice{
+    width: 33.33vw;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    background-color: #2B96CC;
+    cursor: pointer;
+    color: white;
+    font-family: 'Secular One', sans-serif;
+}
+#hospitalchoice{
+    background: white;
+    color:  #2B96CC;
+}
+
+.hosp_head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color:  #2B96CC;
+    font-family: 'Secular One', sans-serif;
+    height: 25vh;
+}

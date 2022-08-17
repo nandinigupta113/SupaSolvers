@@ -1,13 +1,14 @@
 import './App.css';
-import Home from './Components/Home/Home'
-import Sign from './Components/Signpage/Sign.js'
+import Home from './Pages/Home/Home'
+import Sign from './Pages/userlogin/Sign'
 
 function App() {
   return (
     <div className="App">
+
       {/* <Home/> */}
       <Sign/>
-      {/* <SignUp/> */}
+
     </div>
   );
 }

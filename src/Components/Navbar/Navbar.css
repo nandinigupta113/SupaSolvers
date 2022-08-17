@@ -1,0 +1,63 @@
+.header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    height: 10vh;
+    background: white;
+}
+.logo{
+    height:3rem;
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+}
+.head{
+    width: 70vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.onlychoice{
+    font-size: 1rem;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 20vw;
+    background: white;
+    cursor: pointer;
+    
+}
+.selectedpgchoice{
+    font-size: 1.2rem;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2B96CC;
+    height: 10vh;
+    width: 20vw;
+    color:white;
+    cursor: pointer;
+    font-family: 'Secular One', sans-serif;
+}
+
+.location{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap:1.2rem;
+    background: #F64B4B;
+    height: 2rem;
+    width: 8rem;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    margin-right: 2vw;
+}
+.location span{
+    font-size: 1.3rem;
+    filter: invert(100%);
+    font-family: 'Secular One', sans-serif;
+}

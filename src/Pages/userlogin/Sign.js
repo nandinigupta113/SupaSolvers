@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./Sign.css";
 import logo from "../../Assets/SSlogo.png";
-import SignIncomp from "./SignIn/SignIncomp";
-import Signupcomp from "./SignUp/Signupcomp";
+import SignIncomp from "../../Components/Signpage/SignIn/SignIncomp";
+import Signupcomp from "../../Components/Signpage/SignUp/Signupcomp";
 const Sign = () => {
   const [choice, setChoice] = useState("SignIn");
   return (
