@@ -1,0 +1,53 @@
+.availablesec{
+    display: flex;
+    justify-content: center;
+    gap:5vw;
+}
+.secdiv1,.secdiv2{
+    height: 90vh;
+    display: flex;
+    /* border: 4px solid red; */
+}
+.secdiv1{
+    width: 40vw;
+    align-items: center;
+    justify-content: center;
+}
+.secdiv2{
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+}
+.secdiv1 img{
+    height: 80vh;
+    width: 35vw;
+}
+.titlehosp{
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+    font-size:4rem;
+    font-family: 'Ramabhadra', sans-serif; 
+}
+
+.loc{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 2rem;
+    gap:1rem;
+    margin: 0.7vh;
+    font-family: 'Secular One', sans-serif;
+}
+.ans{
+   color: rgb(127, 121, 121);
+}
+.bookbed{
+    display: flex;
+    justify-content: center;
+    width: 40vw;
+}
+.otherfacility, .ContactNo{
+    display: flex;
+
+}

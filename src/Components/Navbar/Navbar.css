@@ -41,7 +41,7 @@
     width: 20vw;
     color:white;
     cursor: pointer;
-    font-family: 'Secular One', sans-serif;
+    /* font-family: 'Secular One', sans-serif; */
 }
 
 .location{
@@ -60,4 +60,8 @@
     font-size: 1.3rem;
     filter: invert(100%);
     font-family: 'Secular One', sans-serif;
+}
+
+.Navbar{
+    box-shadow: 7px 2px 10px 2px #2B96CC;;
 }

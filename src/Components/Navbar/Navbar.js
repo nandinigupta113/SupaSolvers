@@ -3,12 +3,14 @@ import './Navbar.css'
 import PageviewIcon from '@mui/icons-material/Pageview';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import logo from '../../Assets/SSlogo.png'
-const Navbar = () => {
+import { useNavigate } from "react-router-dom";
+import Home from '../../Pages/Home/Home';
+const Navbar = ({defaulth}) => {
+ const navigate = useNavigate();
+ const [pgchoice, setPgchoice] = useState('Home');
+//  {defaulth === 'Home' && setPgchoice('Home')}
 
-    
- const [pgchoice, setPgchoice] = useState("Home");
-
- const handleChoice = (val) => {
+ const handleChoice = (val) => {  
    setPgchoice(val);
  }
 
@@ -19,11 +21,11 @@ const Navbar = () => {
           <img className='logoin' src={logo}/>
         </div>
         <div className='head'>
-          <button className={pgchoice === 'Home'? 'selectedpgchoice' : 'onlychoice'} onClick={(e) => {handleChoice(e.target.value)}} value="Home">Home</button>
-          <button className={pgchoice === 'Bed Availability'? 'selectedpgchoice' : 'onlychoice'} onClick={(e) => {handleChoice(e.target.value)}} value="Bed Availability">Bed Availability</button>
-          <button className={pgchoice === 'Hospitals Nearby'? 'selectedpgchoice' : 'onlychoice'} onClick={(e) => {handleChoice(e.target.value)}} value="Hospitals Nearby">Hospitals Nearby</button>
-          <button className={pgchoice === 'Medical Equipments'? 'selectedpgchoice' : 'onlychoice'} onClick={(e) => {handleChoice(e.target.value)}} value="Medical Equipments">Medical Equipments</button>
-          <button className={pgchoice === 'UserLogin'? 'selectedpgchoice' : 'onlychoice'} onClick={(e) => {handleChoice(e.target.value)}} value="UserLogin">UserLogin</button>
+          <button className={pgchoice === 'Home'? 'selectedpgchoice' : 'onlychoice'} onClick={(e) => {navigate('/'); handleChoice(e.target.value)}} value="Home">Home</button>
+          <button className={pgchoice === 'Hospitals Nearby'? 'selectedpgchoice' : 'onlychoice'} onClick={(e) => {navigate('/hospitalsnearby');handleChoice(e.target.value)}} value="Hospitals Nearby">Hospitals Nearby</button>
+          <button className={pgchoice === 'Bed Availability'? 'selectedpgchoice' : 'onlychoice'} onClick={(e) => { handleChoice(e.target.value); navigate('/bedavailability');}} value="Bed Availability">Bed Availability</button>
+          <button className={pgchoice === 'Medical Equipments'? 'selectedpgchoice' : 'onlychoice'} onClick={(e) => {navigate('/medicalequip');handleChoice(e.target.value)}} value="Medical Equipments">Medical Equipments</button>
+          <button className={pgchoice === 'UserLogin'? 'selectedpgchoice' : 'onlychoice'} onClick={(e) => {navigate('/sign'); handleChoice(e.target.value)}} value="Login">SignIn/SignUp</button>
           <PageviewIcon  color="primary" sx={{cursor:'pointer', height:"3rem",width:"3rem"}} />
           <div className='location'>
           <span><PlaceOutlinedIcon sx={{cursor:'pointer',marginTop:'0.4rem', height:"1.7rem",width:"2rem"}}/></span>

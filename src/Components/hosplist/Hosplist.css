@@ -1,0 +1,15 @@
+.Hosplist{
+    display: flex;
+    justify-content: center;
+    height: 30vh;
+    width: 100vw;
+    margin-top: 5vh;
+}
+.inHosplist{
+   width: 80vw;
+   border: 2px solid black;
+   border-radius: 0.7rem;
+   display: flex;
+   justify-content: space-around;
+   /* background: #000; */
+}

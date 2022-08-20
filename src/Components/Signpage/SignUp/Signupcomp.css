@@ -5,10 +5,12 @@
     margin-bottom: -3.6rem;
     margin-top: 0.3rem;
 }
-.Userbox2{
+.outerlayer{
     background: linear-gradient(136.66deg, #2C3F88 8.33%, #009EDD 96.9%);
     border-radius: 1rem;
     margin: 1rem;
+}
+.Userbox2{
     display: grid;
     justify-content: space-around;
     grid-template-columns: auto auto;

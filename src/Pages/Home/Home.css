@@ -9,7 +9,7 @@
     justify-content: center;
 }
 .base{
-    background: center center no-repeat url('../../Assets/hospitalimg.png');
+    background:center center no-repeat url('../../Assets/hospitalimg.png');
     height: 80vh;
     width:100vw;
     background-size:auto;
@@ -44,7 +44,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
     background-color: #2B96CC;
     cursor: pointer;
     color: white;
@@ -63,4 +63,28 @@
     color:  #2B96CC;
     font-family: 'Secular One', sans-serif;
     height: 25vh;
+}
+.images{
+    display: flex;
+    justify-content: space-around;
+}
+.images img{
+    height: 40vh;
+    width: 20vw;
+    border-radius:0.5rem;
+    object-fit: cover;
+}
+.hospt_img,.hospitalstate{
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+    font-weight: bold;
+    gap:0.5rem;
+    font-family: 'Secular One', sans-serif; 
+}
+.combine{
+    margin-top: -7rem;
+    margin-left: 1rem;
+    color: white;
+    margin-bottom: 4rem;
 }

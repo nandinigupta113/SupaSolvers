@@ -1,0 +1,38 @@
+.Footer{
+    height:63vh;
+    padding: 3rem;
+    background: url('../../Assets/footer_bg.png');
+}
+.Footer img{
+    margin-left: 4rem;
+    margin-bottom: 2rem;
+}
+.footerfields{
+    margin-left: 6rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4rem;
+    gap: 1.3rem;
+}
+.baseline{
+    display: flex;
+    justify-content: center;
+    background: black;
+    color: white;
+    height: 8vh;
+    font-size: 1.3rem;
+    align-items: center;
+}
+.follow,.icons{
+    display: flex;
+    justify-content: space-between;
+}
+.footerfollow{
+    width: 25vw;
+    font-size:1.7rem;
+}
+.footericon{
+    width: 25vw;
+    display: flex;
+    gap: 1.5rem;
+}

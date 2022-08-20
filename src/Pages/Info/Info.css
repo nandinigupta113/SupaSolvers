@@ -1,0 +1,91 @@
+.Info{
+    height: 100vh;
+    width: 100vw;
+    background: url("../../Assets/sign_bg.png");
+    background-size: cover; 
+
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+.incenter{
+    height: 80vh;
+    width: 60vw;
+    background: white;
+    border-radius: 1rem;
+}
+.layer2_1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:1.5rem;
+    background: linear-gradient(136.66deg, #2C3F88 8.33%, #009EDD 96.9%);
+    border-radius: 0.2rem;
+    margin: 1rem;
+    height: 6vh;
+    color: white;
+    font-family: 'Ramabhadra', sans-serif;
+}
+
+.input1{
+    width: 60vw;
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+.input2{
+    width: 60vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    flex-direction: column;
+}
+.divisionbedtype{
+    display: flex;
+    gap: 2vw;
+}
+.bed_type{
+    font-size:1.5rem;
+    font-family: 'Secular One', sans-serif; 
+    
+}
+.general,.special{
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    gap: 1.2vh;
+}
+.txt{
+    font-size: 1.3rem;
+}
+.generalin{
+    width: 25vw;
+    display: flex;
+}
+
+.ininput2,.ininput3{
+    width: 52vw;
+}
+.ininput3{
+    display: flex;
+    flex-direction: column;
+}
+.input3{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    width: 60vw;
+}
+#otherfacilites{
+    font-family: 'Secular One', sans-serif;    
+}
+.ininput3 textarea{
+    height: 5vh;
+    resize: none;
+    padding: 0.6rem;
+}
