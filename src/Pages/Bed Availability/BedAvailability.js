@@ -74,7 +74,7 @@ const BedAvailability = () => {
           </div>
           <div className="ContactNo loc">
             <span>Contact No:</span>
-            <sapn className="ans">9089******</sapn>
+            <span className="ans">9089******</span>
           </div>
           <div className="bookbed">
              <Button variant="contained" sx={ {marginTop:"2vh", fontSize:"1.5rem",width:"30vw"}}>Book a Bed</Button>

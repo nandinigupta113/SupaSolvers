@@ -1,6 +1,7 @@
 .Footer{
     height:63vh;
     padding: 3rem;
+    /* width: 98.9vw; */
     background: url('../../Assets/footer_bg.png');
 }
 .Footer img{
@@ -22,6 +23,7 @@
     height: 8vh;
     font-size: 1.3rem;
     align-items: center;
+    /* width: 98.9vw; */
 }
 .follow,.icons{
     display: flex;

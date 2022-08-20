@@ -11,8 +11,8 @@
 .base{
     background:center center no-repeat url('../../Assets/hospitalimg.png');
     height: 80vh;
-    width:100vw;
-    background-size:auto;
+    /* width:100vw; */
+    /* background-size:auto; */
     margin-right: 0;
     overflow:hidden;
 }
