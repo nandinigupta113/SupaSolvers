@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Hosplist.css';
 import { useNavigate } from "react-router-dom";
-const Hosplist = ({email,name, mobilenum, city}) => {
+const Hosplist = ({hospid,email,name, mobilenum, city}) => {
     const navigate = useNavigate();
   return (
     <div className='Hosplist'>
@@ -31,7 +31,7 @@ const Hosplist = ({email,name, mobilenum, city}) => {
             
            </div>
            <div className='moreinfo'>
-                 <span onClick={(e) => {e.preventDefault(); navigate('/bedavailability')}}>More Information &#11166;</span>
+                 <span onClick={(e) => {e.preventDefault(); navigate('/bedavailability',{state:{hospid}})}}>More Information &#11166;</span>
             </div>
         </div>
        

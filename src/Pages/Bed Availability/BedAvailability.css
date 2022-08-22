@@ -1,7 +1,7 @@
 .availablesec{
     display: flex;
     justify-content: center;
-    gap:5vw;
+    gap:2vw;
 }
 .secdiv1,.secdiv2{
     height: 90vh;
@@ -14,7 +14,7 @@
     justify-content: center;
 }
 .secdiv2{
-    width: 40vw;
+    width: 60vw;
     display: flex;
     flex-direction: column;
 }
@@ -27,14 +27,14 @@
     display: flex;
     justify-content: center;
     margin-top: 5vh;
-    font-size:4rem;
+    font-size:3rem;
     font-family: 'Ramabhadra', sans-serif; 
 }
 
 .loc{
     display: flex;
     justify-content: flex-start;
-    font-size: 2rem;
+    font-size: 1.5rem;
     gap:1rem;
     margin: 0.7vh;
     font-family: 'Secular One', sans-serif;
@@ -53,4 +53,24 @@
 }
 .titlehosp span{
     color:#2B96CC;
+}
+.ContactNo input{
+width: 20vw;
+height: 5vh;
+padding: 1rem;
+font-size: 1rem;
+}
+.xxx{
+    font-size: 1rem;
+    padding: 0.3rem;
+}
+.otpfields{
+    display: flex;
+    gap:1rem;
+}
+.otpfields input{
+    width: 2rem;
+    height: 2.5rem;
+    padding: 0.5rem;
+    font-size: large;
 }

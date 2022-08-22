@@ -14,6 +14,7 @@ const HospitalsNearby = () => {
       .get("https://sih-23.herokuapp.com/all/hospitals")
       .then((res) => {
         setHospdata(res.data);
+        // console.log(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -21,10 +22,10 @@ const HospitalsNearby = () => {
   });
   return (
     <div className="HospitalsNearby">
-      <Navbar />
+      <Navbar defaulth={'Hospitals Nearby'}/>
       <div className="hosplisttt">
         {hospdata && hospdata.map((val, i) => (
-        <Hosplist name={val.name} city={val.city} email={val.email} mobilenum={val.mobileNum} />
+        <Hosplist hospid={val._id} name={val.name} city={val.city} email={val.email} mobilenum={val.mobileNum} />
         ))}
       </div>
       
