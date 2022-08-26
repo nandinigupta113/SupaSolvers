@@ -72,7 +72,7 @@ const HospitalsNearby = () => {
           onChange={(e) => setPincode(e.target.value)}
         />
         <TextField
-          label="District"
+          label="City"
           id="outlined-size-small"
           defaultValue=""
           size="small"

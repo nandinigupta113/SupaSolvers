@@ -2,10 +2,14 @@ import React, { useEffect, useState } from "react";
 import "./Hosplist.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+// import Button from '@mui/material/Button';
+import Button from '@mui/material/Button';
 import { width } from "@mui/system";
 const Hosplist = ({ email, hospid, name, mobilenum, city }) => {
   const navigate = useNavigate();
   const [beds_avail, setBeds_avail] = useState("");
+  const [disable, setDisable] = useState("");
+
 
   useEffect(() => {
     if (hospid) {
@@ -16,9 +20,12 @@ const Hosplist = ({ email, hospid, name, mobilenum, city }) => {
         .post("https://sih-23.herokuapp.com/hospitalbyid", data)
         .then((res) => {
           setBeds_avail(res.data);
+          if((res.data.matchbadData.generalType.availbility + res.data.matchbadData.specialType.availbility) <= 0){
+            setDisable('yes');
+          }
         })
         .catch((err) => {
-          console.log(err);
+          console.log(err.respone.data.message);
         });
     }
   });
@@ -66,13 +73,15 @@ const Hosplist = ({ email, hospid, name, mobilenum, city }) => {
           </div>
         </div>
         <div className="moreinfo">
-          <span
-            onClick={(e) => {
+
+          <span>
+
+                 {disable === '' && <Button  color="success"sx={{width:"10rem"}} variant="contained"  onClick={(e) => {
               e.preventDefault();
               navigate("/bedavailability", { state: { hospid } });
-            }}
-          >
-            More Information &#11166;
+            }} >Book a bed</Button>}
+                 {disable === 'yes' && <Button disabled  color="success"sx={{width:"10rem"}} variant="contained">Book a bed</Button>}
+
           </span>
         </div>
       </div>

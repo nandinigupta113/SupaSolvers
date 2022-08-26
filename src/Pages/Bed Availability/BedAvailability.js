@@ -128,7 +128,7 @@ const BedAvailability = () => {
     handleClickOpen();
     const data2 = {
       patientName: username,
-      Adhar:aadharno,
+      Adhar: aadharno,
       email: useremailid,
       age: parseInt(userage),
       type: bedtype,
@@ -141,8 +141,13 @@ const BedAvailability = () => {
         console.log(res.data);
       })
       .catch((err) => {
-        console.log(err);
-        toast.error("Enter valid details");
+        console.log(err.response.data);
+        if(err.response.data === 'adhar is already exist'){
+          toast.error("Bed has been already booked with this aadhar no.");
+        }
+        else{
+          toast.error("Enter valid details");
+        }
       });
   };
 
@@ -150,16 +155,16 @@ const BedAvailability = () => {
     <div className="BedAvailability">
       <Navbar defaulth={"Hospitals Nearby"} />
       <div className="availablesec">
-        <div className="secdiv1">
+        {<div className="secdiv1">
           <img src={Hosprefimg}></img>
-        </div>
+        </div>}
         <div className="secdiv2">
           <div className="titlehosp">
             {result && <span>{result.dataHos.name}</span>}
             {/* <StarIcon sx={{ marginTop: "3rem", marginLeft: "1rem" }} />
-            <StarIcon sx={{ marginTop: "3rem", marginLeft: "1rem" }} />
-            <StarIcon sx={{ marginTop: "3rem", marginLeft: "1rem" }} />
-            <StarIcon sx={{ marginTop: "3rem", marginLeft: "1rem" }} /> */}
+      <StarIcon sx={{ marginTop: "3rem", marginLeft: "1rem" }} />
+      <StarIcon sx={{ marginTop: "3rem", marginLeft: "1rem" }} />
+      <StarIcon sx={{ marginTop: "3rem", marginLeft: "1rem" }} /> */}
           </div>
           <div className="loc">
             <span>Location:</span>
@@ -217,7 +222,9 @@ const BedAvailability = () => {
               <span>Aadhar Card No:</span>
               <input
                 className="ans xxx"
-                type="text"
+                type="number"
+                minLength={12}
+                maxLength={12}
                 value={aadharno}
                 onChange={(e) => {
                   setAadharno(e.target.value);

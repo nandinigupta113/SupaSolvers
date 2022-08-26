@@ -41,14 +41,14 @@ const Bedstatus = () => {
         <span className={type_select === "Special"? 'dash_split1' : 'dash_split2' }value="Special"  onClick={(e) => handletype("Special")}>Special Beds</span>
       </div>
 
-      {/* <div className="dash_txt">
+      <div className="dash_txt">
         <span>General:&nbsp;&nbsp;</span>
         {dash_result && <span className="ans">{dash_result.matchbadData.generalType.availbility}</span>}
       </div>
       <div className="dash_txt">
         <span>Special:&nbsp;&nbsp;</span>
         {dash_result && <span className="ans">{dash_result.matchbadData.specialType.availbility}</span>}
-      </div> */}
+      </div>
 
 
       {type_select === 'General' && <div>

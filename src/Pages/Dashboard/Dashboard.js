@@ -12,7 +12,7 @@ const Dashboard = () => {
 
     const [dash_id, setDash_id] = useState("");
     const [dash_result, setDash_result] = useState("");
-    
+    const [dash_booking, setDash_booking] = useState("xxx");
     useEffect(() => {
       setDash_id(localStorage.getItem('_id'));
       console.log(dash_id);
@@ -59,7 +59,6 @@ const Dashboard = () => {
                 <span className='colorx' value="bedstatus" >Bed status</span>
                 </div>
         </div>
-
         
         <div className='dashsec2'>
            {clicked==="about" &&  <About/>}
@@ -75,7 +74,7 @@ const Dashboard = () => {
             </div>
             <div>
                {clicked === 'about' && <button className='edit_btn' onClick={(e) => {e.preventDefault();navigate('/Updatebed')}}>Edit Details</button>}
-               {clicked === 'bedstatus' && <button className='edit_btn' onClick={(e) => {e.preventDefault();navigate('/Updatebed')}}>Add Bed</button>}
+               {clicked === 'bedstatus' && <button className='edit_btn' onClick={(e) => {e.preventDefault();navigate('/bedavailability')}}>Book a bed</button>}
 
             </div>
         </div>

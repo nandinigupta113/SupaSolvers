@@ -56,7 +56,7 @@
 }
 .moreinfo span{
     color: #2B96CC;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 .hrline{
     display: flex;
