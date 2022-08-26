@@ -1,0 +1,12 @@
+.district_head{
+    background: #2B96CC;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    height: 5rem;
+}
+.dist_h{
+    padding: 3rem;
+}

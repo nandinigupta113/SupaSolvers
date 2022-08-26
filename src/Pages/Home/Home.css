@@ -11,7 +11,7 @@
 .base{
     background:center center no-repeat url('../../Assets/hospitalimg.png');
     height: 80vh;
-    /* width:100vw; */
+    width:100vw;
     /* background-size:auto; */
     margin-right: 0;
     overflow:hidden;
@@ -48,7 +48,7 @@
     background-color: #2B96CC;
     cursor: pointer;
     color: white;
-    font-family: 'Secular One', sans-serif;
+    /* font-family: 'Secular One', sans-serif; */
 }
 #hospitalchoice{
     background: white;
@@ -61,7 +61,7 @@
     align-items: center;
     font-size: 2rem;
     color:  #2B96CC;
-    font-family: 'Secular One', sans-serif;
+    /* font-family: 'Secular One', sans-serif; */
     height: 25vh;
 }
 .images{
@@ -80,11 +80,27 @@
     font-size: 30px;
     font-weight: bold;
     gap:0.5rem;
-    font-family: 'Secular One', sans-serif; 
+    /* font-family: 'Secular One', sans-serif;  */
 }
 .combine{
     margin-top: -7rem;
     margin-left: 1rem;
     color: white;
     margin-bottom: 4rem;
+}
+
+.stickavail{
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:20rem;
+    right: 0;
+    height: 2.5rem;
+    top:30vh;
+    background: white;
+    font-size: 1.4rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    cursor: pointer;
 }

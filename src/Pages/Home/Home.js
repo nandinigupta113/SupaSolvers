@@ -5,8 +5,16 @@ import Slider from '../../Components/Slider/Slider';
 import Footer from '../../Components/Footer/Footer';
 import Support from '../../Components/Support/Support';
 import logo from '../../Assets/SSlogo.png'
+import { useNavigate } from "react-router-dom";
 const Home = () => {
+  const navigate = useNavigate();
+  const handlebedavailnavigate = () => {
+    navigate("/HospitalsNearby");
+  }
 
+  const handledistrictwise = () => {
+    navigate('/districtwise')
+  }
   return (
     <div className='Home'>
       <div className='basecover'>
@@ -17,13 +25,16 @@ const Home = () => {
         <div className='tagline'>
             <span>You don't need to worry Of your Health because</span>
         </div>
+        <div className='stickavail' onClick={handledistrictwise}>
+            <span>District Wise Bed Availability</span>
+        </div>
           <div className='logodiv'>
           <img src={logo}/>
           </div>
         </div>
         </div>
         <div className='options'>
-          <div className='opchoice'>BED AVAILABILITY</div>
+          <div className='opchoice' onClick={handlebedavailnavigate}>BED AVAILABILITY</div>
           <div id="hospitalchoice" className='opchoice'>HOSPITALS</div>
           <div className='opchoice'>HEALTH CARE</div>
         </div>

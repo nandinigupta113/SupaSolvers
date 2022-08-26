@@ -1,0 +1,29 @@
+.dash_status{
+    display: flex;
+}
+.dash_split1{
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+    color: white;
+    background: #2B96CC;
+    height: 4rem;
+    cursor: pointer;
+}
+.dash_split2{
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+    background: white;
+    height: 4rem;
+    cursor: pointer;
+}
+.bedstatus{
+    display: flex;
+    justify-content: center;
+    font-size:1.6rem;
+}

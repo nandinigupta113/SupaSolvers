@@ -7,10 +7,10 @@
 }
 .inHosplist{
    width: 80vw;
-   border: 2px solid black;
+   /* border: 2px solid black; */
    border-radius: 0.7rem;
    display: flex;
-   background: #d2e4ed;
+   /* background: #d2e4ed; */
 }
 .hosplistimg{
     width: 30vw;
@@ -25,19 +25,20 @@
     border-radius: 0.7rem;
 }
 .hosplisttxt{
-    width: 30vw;
+    width: 33vw;
+
 }
 .hosplisttitle{
     margin-top: 1rem;
     font-size: 2rem;
-    font-family: 'Ramabhadra', sans-serif; 
+    /* font-family: 'Ramabhadra', sans-serif;  */
 }
 .line{
     display: flex;
     margin: 0.3rem;
     font-size: 1.5rem;
     /* font-weight: 600; */
-    font-family: 'Secular One', sans-serif;
+    /* font-family: 'Secular One', sans-serif; */
 
 }
 .bluetxt{
@@ -56,4 +57,10 @@
 .moreinfo span{
     color: #2B96CC;
     cursor: pointer;
+}
+.hrline{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }

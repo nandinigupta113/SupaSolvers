@@ -1,49 +1,22 @@
 import React, { useState } from "react";
-import "./Info.css";
+import "../Info/Info.css";
 import TextField from "@mui/material/TextField";
-import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
+// import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
 import HotelIcon from "@mui/icons-material/Hotel";
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import logo from "../../Assets/SSlogo.png";
 import { useNavigate } from "react-router-dom";
-
 import axios from "axios";
-
-const Info = () => {
+const Updatebed = () => {
   const navigate = useNavigate(); 
-  // const [hospitalname, setHospitalname] = useState('');
-  const [otherfacility, setOtherfacility] = useState('');
-  const [generalquant, setGeneralquant] = useState('');
-  const [specialquant, setSpecialquant] = useState('');
-  const [generalbedprice, setGeneralbedprice] = useState('');
-  const [specialbedprice, setSpecialbedprice] = useState('');
-  let token = localStorage.getItem("token");
-  const handleinfosubmit = (e) => {
+  const handleupdatesubmit= (e) => {
     e.preventDefault();
-    const data = {
-      "cookie_token":token,
-       "generalType":{
-        "availbility": parseInt(generalquant),
-        "pricePerbad": parseInt(generalbedprice)
-       },
-       "specialType":{
-        "availbility": parseInt(specialquant),
-        "pricePerbad": parseInt(specialbedprice)
-       },
-       "otherFacilities":otherfacility
-    }
-    axios.put('https://sih-23.herokuapp.com/addbad',data)
-    .then((res) => {
-      console.log(res.data);
-      navigate('/Dashboard');
-    })
-    .catch((err)=>{
-      console.log(err);
-    })
+    navigate('/Dashboard');
+  
   }
 
   return (
-    <div className="Info">
+    <div className='Updatebed Info'>
       <img className="signlogo" src={logo} />
       <div className="center">
         <div className="incenter">
@@ -57,19 +30,6 @@ const Info = () => {
             <span>Provide Details</span>
           </div>
           <div className="layer3_1">
-            {/* <div className="input1">
-              <LocalHospitalIcon sx={{ width: "3vw", height: "5vh" }} />
-              <TextField
-                onChange={(e) => {setHospitalname(e.target.value)}}
-                value={hospitalname}
-                id="outlined-basic"
-                label="Hospital Name"
-                size="small"
-                sx={{ width: "50vw" }}
-                variant="outlined"
-                type='text'
-              />
-            </div> */}
             <div className="input2">
               <div className="ininput2">
                 <span className="bed_type">Bed Type</span>
@@ -84,9 +44,7 @@ const Info = () => {
                         label="Available Quantity"
                         size="small"
                         variant="outlined"
-                        value={generalquant}
                         type='number'
-                        onChange={(e) => {setGeneralquant(e.target.value)}}
                       />
                     </div>
                     <div className="generalin">
@@ -98,8 +56,6 @@ const Info = () => {
                         size="small"
                         variant="outlined"
                         type='number'
-                        value={generalbedprice}
-                        onChange={(e) => {setGeneralbedprice(e.target.value)}}
                       />
                     </div>
                     
@@ -115,8 +71,7 @@ const Info = () => {
                         size="small"
                         variant="outlined"
                         type='number'
-                        value={specialquant}
-                        onChange={(e) => {setSpecialquant(e.target.value)}}
+               
                       />
                     </div>
                     <div className="generalin">
@@ -128,8 +83,7 @@ const Info = () => {
                         size="small"
                         variant="outlined"
                         type='number'
-                        value={specialbedprice}
-                        onChange={(e) => {setSpecialbedprice(e.target.value)}}
+                    
                       />
                     </div>
                   </div>
@@ -139,11 +93,12 @@ const Info = () => {
             <div className="input3">
               <div className="ininput3">
               <span className="txt" id='otherfacilites'>Other Facilites</span>
-              <textarea onChange={(e) => {setOtherfacility(e.target.value)}} value={otherfacility}></textarea>
+              <textarea></textarea>
+
               </div>            
             </div>
             <div className="signbtn">
-                <button onClick={handleinfosubmit}>Submit</button>
+                <button onClick={handleupdatesubmit}>Submit</button>
             </div>        
           </div>
         </div>
@@ -152,4 +107,4 @@ const Info = () => {
   );
 };
 
-export default Info;
+export default Updatebed

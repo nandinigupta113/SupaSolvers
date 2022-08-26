@@ -17,9 +17,9 @@ const Navbar = ({defaulth}) => {
         </div>
         <div className='head'>
           <button className={defaulth === 'Home'? 'selectedpgchoice' : 'onlychoice'} onClick={(e) => {navigate('/');}} value="Home">Home</button>
-          <button className={defaulth === 'Hospitals Nearby'? 'selectedpgchoice' : 'onlychoice'} onClick={(e) => {navigate('/hospitalsnearby');}} value="Hospitals Nearby">Hospitals Available</button>
+          <button className={defaulth === 'Hospitals Nearby'? 'selectedpgchoice' : 'onlychoice'} onClick={(e) => {navigate('/hospitalsnearby');}} value="Hospitals Nearby">Beds Availability</button>
           {/* <button className={pgchoice === 'Bed Availability'? 'selectedpgchoice' : 'onlychoice'} onClick={(e) => { handleChoice(e.target.value); navigate('/bedavailability');}} value="Bed Availability">Bed Availability</button> */}
-          <button className={defaulth === 'Medical Equipments'? 'selectedpgchoice' : 'onlychoice'} onClick={(e) => {navigate('/medicalequip');}} value="Medical Equipments">Medical Equipments</button>
+          {/* <button className={defaulth === 'Medical Equipments'? 'selectedpgchoice' : 'onlychoice'} onClick={(e) => {navigate('/medicalequip');}} value="Medical Equipments">Medical Equipments</button> */}
           <button className={defaulth === 'UserLogin'? 'selectedpgchoice' : 'onlychoice'} onClick={(e) => {navigate('/sign');}} value="Login">SignIn/SignUp</button>
           {/* <PageviewIcon  color="primary" sx={{cursor:'pointer', height:"3rem",width:"3rem"}} /> */}
           <div className='location'>

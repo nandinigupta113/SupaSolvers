@@ -54,6 +54,7 @@ const BedAvailability = () => {
   const [useremailid, setUseremailid] = useState("");
   const [username, setUsername] = useState("");
   const [userage, setUserage] = useState("");
+  const [aadharno, setAadharno] = useState("");
   const [open, setOpen] = React.useState(false);
 
   // const [otp,setOtp] = useState('');
@@ -78,10 +79,10 @@ const BedAvailability = () => {
       .post("https://sih-23.herokuapp.com/hospitalbyid", data)
       .then((res) => {
         setResult(res.data);
+        // console.log(res.data);
       })
       .catch((err) => {
         console.log(err);
-
       });
   });
 
@@ -95,25 +96,25 @@ const BedAvailability = () => {
       parseInt(pin6);
 
     const data = {
-      "badallotid":store.badallotid,
-      "badid":store.badid,
-      "otp":value
-    }
+      badallotid: store.badallotid,
+      badid: store.badid,
+      otp: value,
+    };
     // console.log(data);
-    axios.put('https://sih-23.herokuapp.com/bad/bookingbad/verify',data)
-    .then((res)=>{
-      // console.log(res.data);
-      if(res.data === "your bad has been booked"){
-        console.log("Hurrah");
-        // setStore("");
-        setVerified('done');
-      }
-
-    })
-    .catch((err)=>{
-      // console.log(err);
-      toast.error('Enter correct OTP')
-    })
+    axios
+      .put("https://sih-23.herokuapp.com/bad/bookingbad/verify", data)
+      .then((res) => {
+        // console.log(res.data);
+        if (res.data === "your bad has been booked") {
+          console.log("Hurrah");
+          // setStore("");
+          setVerified("done");
+        }
+      })
+      .catch((err) => {
+        // console.log(err);
+        toast.error("Enter correct OTP");
+      });
   };
 
   const handlebedbooking = () => {
@@ -125,8 +126,9 @@ const BedAvailability = () => {
     setPin5("");
     setPin6("");
     handleClickOpen();
-      const data2 = {
+    const data2 = {
       patientName: username,
+      Adhar:aadharno,
       email: useremailid,
       age: parseInt(userage),
       type: bedtype,
@@ -140,7 +142,7 @@ const BedAvailability = () => {
       })
       .catch((err) => {
         console.log(err);
-        toast.error('Enter valid details')
+        toast.error("Enter valid details");
       });
   };
 
@@ -211,6 +213,17 @@ const BedAvailability = () => {
                 &#8377;{result.matchbadData.specialType.pricePerbad}
               </span>
             )}
+            <div className="loc">
+              <span>Aadhar Card No:</span>
+              <input
+                className="ans xxx"
+                type="text"
+                value={aadharno}
+                onChange={(e) => {
+                  setAadharno(e.target.value);
+                }}
+              ></input>
+            </div>
           </div>
 
           <div className="loc">
@@ -255,99 +268,102 @@ const BedAvailability = () => {
             </Button>
           </div>
 
-          {verified !=="done" && store !== "" && <Dialog open={open} onClose={handleClose}>
-            <DialogTitle>Enter OTP sent to Email Id </DialogTitle>
-            <DialogContent>
-              <div className="otpfields">
-                <input
-                  ref={otp1Ref}
-                  maxLength={1}
-                  value={pin1}
-                  onChange={(e,otp1) => {
-                    setPin1(e.target.value)
-                    setOtp1(otp1);
-                    if (otp1 !== "") {
-                      otp2Ref.current.focus();
-                    }
-                  }}
-                ></input>
-                <input
-                  ref={otp2Ref}
-                  maxLength={1}
-                  value={pin2}
-                  onChange={(e,otp2) => {
-                    setPin2(e.target.value)
-                    setOtp2(otp2);
-                    if (otp2 !== "") {
-                      otp3Ref.current.focus();
-                    }
-                  }}
-                ></input>
-                <input
-                  ref={otp3Ref}
-                  maxLength={1}
-                  value={pin3}
-                  onChange={(e,otp3) => {
-                    setOtp3(otp3);
-                    setPin3(e.target.value) 
-                    if (otp3 !== "") {
-                      otp4Ref.current.focus();
-                    }
-                  }}
-                ></input>
-                <input
-                  ref={otp4Ref}
-                  maxLength={1}
-                  value={pin4}
-                  onChange={(e,otp4) => {
-                    setOtp4(otp4);
-                    setPin4(e.target.value)
-                    if (otp4 !== "") {
-                      otp5Ref.current.focus();
-                    }
-                  }}
-                ></input>
-                <input
-                  ref={otp5Ref}
-                  maxLength={1}
-                  value={pin5}
-                  onChange={(e,otp5) => {
-                    setOtp5(otp5);
-                    setPin5(e.target.value)
-                    if (otp5 !== "") {
-                      otp6Ref.current.focus();
-                    }
-                  }}
-                ></input>
-                <input
-                  ref={otp6Ref}
-                  maxLength={1}
-                  value={pin6}
-                  onChange={(e,otp6) => {
-                    setPin6(e.target.value)
-                    setOtp6(otp6);
-                  }}
-                ></input>
-              </div>
-            </DialogContent>
-            <DialogActions>
-              <Button onClick={handleClose}>Cancel</Button>
-              <Button onClick={handleVerify}>verify</Button>
-            </DialogActions>
-          </Dialog>}
+          {verified !== "done" && store !== "" && (
+            <Dialog open={open} onClose={handleClose}>
+              <DialogTitle>Enter OTP sent to Email Id </DialogTitle>
+              <DialogContent>
+                <div className="otpfields">
+                  <input
+                    ref={otp1Ref}
+                    maxLength={1}
+                    value={pin1}
+                    onChange={(e, otp1) => {
+                      setPin1(e.target.value);
+                      setOtp1(otp1);
+                      if (otp1 !== "") {
+                        otp2Ref.current.focus();
+                      }
+                    }}
+                  ></input>
+                  <input
+                    ref={otp2Ref}
+                    maxLength={1}
+                    value={pin2}
+                    onChange={(e, otp2) => {
+                      setPin2(e.target.value);
+                      setOtp2(otp2);
+                      if (otp2 !== "") {
+                        otp3Ref.current.focus();
+                      }
+                    }}
+                  ></input>
+                  <input
+                    ref={otp3Ref}
+                    maxLength={1}
+                    value={pin3}
+                    onChange={(e, otp3) => {
+                      setOtp3(otp3);
+                      setPin3(e.target.value);
+                      if (otp3 !== "") {
+                        otp4Ref.current.focus();
+                      }
+                    }}
+                  ></input>
+                  <input
+                    ref={otp4Ref}
+                    maxLength={1}
+                    value={pin4}
+                    onChange={(e, otp4) => {
+                      setOtp4(otp4);
+                      setPin4(e.target.value);
+                      if (otp4 !== "") {
+                        otp5Ref.current.focus();
+                      }
+                    }}
+                  ></input>
+                  <input
+                    ref={otp5Ref}
+                    maxLength={1}
+                    value={pin5}
+                    onChange={(e, otp5) => {
+                      setOtp5(otp5);
+                      setPin5(e.target.value);
+                      if (otp5 !== "") {
+                        otp6Ref.current.focus();
+                      }
+                    }}
+                  ></input>
+                  <input
+                    ref={otp6Ref}
+                    maxLength={1}
+                    value={pin6}
+                    onChange={(e, otp6) => {
+                      setPin6(e.target.value);
+                      setOtp6(otp6);
+                    }}
+                  ></input>
+                </div>
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={handleClose}>Cancel</Button>
+                <Button onClick={handleVerify}>verify</Button>
+              </DialogActions>
+            </Dialog>
+          )}
 
-          {verified !== "" && <Dialog open={open} onClose={handleClose}>
-            <DialogTitle>Your bed has been successfully booked!</DialogTitle>
-            <DialogActions>
-              <Button onClick={handleClose}>Okay</Button>
-            </DialogActions>
-          </Dialog>}
-
+          {verified !== "" && (
+            <Dialog open={open} onClose={handleClose}>
+              <DialogTitle>Your bed has been successfully booked!</DialogTitle>
+              <DialogActions>
+                <Button onClick={handleClose}>Okay</Button>
+              </DialogActions>
+            </Dialog>
+          )}
         </div>
       </div>
       {/* <Support/>
       <Footer/> */}
-                <ToastContainer />
+      <ToastContainer />
     </div>
   );
 };

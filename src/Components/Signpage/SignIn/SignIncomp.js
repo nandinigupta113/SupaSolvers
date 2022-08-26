@@ -9,6 +9,7 @@ const SignIncomp = () => {
   const navigate = useNavigate();
   const [userId,setUserId] = useState("");
   const [psswd,setPsswd] = useState("");
+  const [hospid,setHospid] = useState('');
   let token;
   const handlesignin = (e) => {
     e.preventDefault();
@@ -21,7 +22,8 @@ const SignIncomp = () => {
       console.log(res.data);
       if(res.data.cookie_token){
         localStorage.setItem("token",res.data.cookie_token);
-        navigate('/Info');
+        localStorage.setItem("_id",res.data.hosId);
+        navigate('/Dashboard');
       }
     })
     .catch((err) => {
@@ -57,7 +59,7 @@ const SignIncomp = () => {
               </div>
             </div>
           </div>
-          <ToastContainer />
+          <ToastContainer/>
     </div>
   )
 }

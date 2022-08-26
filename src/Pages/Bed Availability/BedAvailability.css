@@ -28,7 +28,7 @@
     justify-content: center;
     margin-top: 5vh;
     font-size:3rem;
-    font-family: 'Ramabhadra', sans-serif; 
+    /* font-family: 'Ramabhadra', sans-serif;  */
 }
 
 .loc{
@@ -37,7 +37,7 @@
     font-size: 1.5rem;
     gap:1rem;
     margin: 0.7vh;
-    font-family: 'Secular One', sans-serif;
+    /* font-family: 'Secular One', sans-serif; */
 }
 .ans{
    color: rgb(127, 121, 121);

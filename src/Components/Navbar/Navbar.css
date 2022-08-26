@@ -1,6 +1,6 @@
 .header{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     /* width: 100vw;
     height: 10vh; */
@@ -8,12 +8,12 @@
 }
 .logo{
     height:3rem;
-    width: 30vw;
+    width: 50vw;
     display: flex;
     justify-content: center;
 }
 .head{
-    width: 70vw;
+    width: 50vw;
     display: flex;
     justify-content: space-around;
     align-items: center;

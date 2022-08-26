@@ -5,6 +5,9 @@ import Info from './Pages/Info/Info';
 import BedAvailability from "./Pages/Bed Availability/BedAvailability";
 import HospitalsNearby from "./Pages/Hospitals Nearby/HospitalsNearby";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Dashboard from "./Pages/Dashboard/Dashboard";
+import Updatebed from "./Pages/Updatebed/Updatebed";
+import District from "./Pages/Districtwise/District";
 
 function App() {
   return (
@@ -16,6 +19,9 @@ function App() {
           <Route path="/Info" element={<Info/>} />
           <Route path="/HospitalsNearby" element={<HospitalsNearby/>} />
           <Route path="/bedavailability" element={<BedAvailability/>} />
+          <Route path="/Dashboard" element={<Dashboard/>} />
+          <Route path="/Updatebed" element={<Updatebed/>} />
+          <Route path="/districtwise" element={<District/>} />
         </Routes>
       </BrowserRouter>
     </div>

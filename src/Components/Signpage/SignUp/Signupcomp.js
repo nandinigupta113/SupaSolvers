@@ -16,18 +16,20 @@ const Signupcomp = () => {
   const [psswd, setPsswd] = useState("");
   const [hospitalId, setHospitalId] = useState("");
   const [hospitaltype, setHospitaltype] = useState("");
+  const [pincode, setPincode] = useState("");
+
   let token;
   const handlesignup = (e) =>{
     e.preventDefault();
     const data = {
       name: hospitalName,
       email: email,
-      Hospitalid: hospitalId,
       mobileNum:phone,
       password:psswd,
       address:address,
       state:state,
       city:city,
+      pincode:pincode,
       hospitaltype:hospitaltype
     }
     axios.post('https://sih-23.herokuapp.com/registerhospital',data)
@@ -35,6 +37,7 @@ const Signupcomp = () => {
       console.log(res.data);
       if(res.data.token){     
         localStorage.setItem("token",res.data.token);
+        localStorage.setItem("_id",res.data.save._id);
         navigate('/Info');
       }
     })
@@ -95,7 +98,7 @@ const Signupcomp = () => {
           </div>
           <div className="text2">
             <span></span>
-            <input onChange={(e) => {setHospitalId(e.target.value)}} value={hospitalId} placeholder="Hospital ID" />
+            <input onChange={(e) => {setPincode(e.target.value)}} value={pincode} placeholder="Pin code" />
           </div>
           <div className="text2">
             <span></span>

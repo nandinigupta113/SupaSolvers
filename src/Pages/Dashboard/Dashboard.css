@@ -1,0 +1,101 @@
+.headerdash{
+    display: flex;
+    width: 100vw;
+    height: 10vh;
+}
+.logo{
+    width: 20vw;
+     height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.logo img{
+    height: 3rem;
+}
+.dashh{
+    background: #2B96CC;
+    font-size: 2rem;
+    width: 80vw;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+}
+.dshsec{
+    display: flex;
+    width: 100vw;
+}
+.dashsec1{
+    width: 20vw;
+    height: 90vh;
+}
+.dashsec2{
+    width: 60vw;
+    height: 90vh;
+    background: #F0F5FA;
+}
+.dashsec1_xx{
+    height: 10vh;
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    cursor: pointer;
+    gap: 1vw;
+}
+.dashsec1_xy{
+    background: #2B96CC;
+    height: 10vh;
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    gap: 1vw;
+}
+.dashsec1_xy img{
+    filter: invert(100%);
+}
+.dashsec3{
+    display: flex;
+    background: #F0F5FA;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    margin-left: 0.2vw;
+    width: 19.8vw;
+}
+.dash_img img{
+    height: 25vh;
+    width: 12vw;
+    margin-top: 3vh;
+    border-radius: 20rem;
+}
+.img_below{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vh;
+    margin: 3vh;
+}
+.main{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.edit_btn{
+    cursor: pointer;
+    height: 6vh;
+    width: 10vw;
+    font-size: 1.2rem;
+    border: 2px solid #2B96CC;
+    background: white;
+    border-radius: 0.3rem;
+    margin-top: 1rem;
+}
+.dashsec1 img{
+    height: 3vh;
+}

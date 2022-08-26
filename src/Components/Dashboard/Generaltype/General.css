@@ -1,0 +1,14 @@
+.outtable{
+    background: #2B96CC;
+    padding: 1rem;
+    overflow-y:scroll;
+    max-height: 50vh;
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+}
+.outtable::-webkit-scrollbar {
+    display: none;
+  }
+  .ddlete{
+    cursor: pointer;
+  }
