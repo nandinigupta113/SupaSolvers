@@ -16,12 +16,13 @@ function createData(serialno, name, phone, aadhar, bedId) {
 const General = () => {
   const [dash_list, setDash_list] = useState("");
   useEffect(() => {
+    
     const data = {
       cookie_token: localStorage.getItem("token"),
     };
     axios
       .put(
-        "https://sih-23.herokuapp.com/bad/hospital/bookingbads/General",
+        "https://sih-23.herokuapp.com/bed/hospital/bookingbeds/General",
         data
       )
       .then((res) => {
@@ -35,9 +36,9 @@ const General = () => {
 
   const deletecell = (val) => {
     
-    console.log(`https://sih-23.herokuapp.com/bad/booking/${val}`);
+    console.log(`https://sih-23.herokuapp.com/bed/booking/${val}`);
     console.log(val);
-    const url = `https://sih-23.herokuapp.com/bad/booking/${val}`;
+    const url = `https://sih-23.herokuapp.com/bed/booking/${val}`;
     if (val) {
       axios
         .delete(url)

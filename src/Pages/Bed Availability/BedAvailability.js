@@ -73,7 +73,7 @@ const BedAvailability = () => {
 
   useEffect(() => {
     const data = {
-      id: hospid,
+      Id: hospid,
     };
     axios
       .post("https://sih-23.herokuapp.com/hospitalbyid", data)
@@ -96,16 +96,16 @@ const BedAvailability = () => {
       parseInt(pin6);
 
     const data = {
-      badallotid: store.badallotid,
-      badid: store.badid,
+      bedAllotId: store.bedAllotId,
+      bedId: store.bedId,
       otp: value,
     };
     // console.log(data);
     axios
-      .put("https://sih-23.herokuapp.com/bad/bookingbad/verify", data)
+      .put("https://sih-23.herokuapp.com/bed/bookingbed/verify", data)
       .then((res) => {
-        // console.log(res.data);
-        if (res.data === "your bad has been booked") {
+        console.log(res.data);
+        if (res.data === "your bed has been booked") {
           console.log("Hurrah");
           // setStore("");
           setVerified("done");
@@ -135,7 +135,7 @@ const BedAvailability = () => {
     };
     // console.log(data2);
     axios
-      .put(`https://sih-23.herokuapp.com/bad/booking/${hospid}`, data2)
+      .put(`https://sih-23.herokuapp.com/bed/booking/${hospid}`, data2)
       .then((res) => {
         setStore(res.data);
         console.log(res.data);
@@ -176,16 +176,16 @@ const BedAvailability = () => {
           </div>
           <div className="otherfacility loc">
             <span className="loc">Other Facility:</span>
-            {result && (
-              <span className="ans">{result.matchbadData.otherFacilities}</span>
-            )}
+            {/* {result && (
+              <span className="ans">{result.matchbedData.otherFacilities}</span>
+            )} */}
           </div>
           <div className="BedsAvailable loc">
             <span>Beds Available:</span>
             {result && (
               <span className="ans">
-                {result.matchbadData.generalType.availbility}(General) +{" "}
-                {result.matchbadData.specialType.availbility}(Special)
+                {result.bedData.generalType.availbility}(General) +{" "}
+                {result.bedData.specialType.availbility}(Special)
               </span>
             )}
           </div>
@@ -210,12 +210,12 @@ const BedAvailability = () => {
             <span>Price For Bed:</span>
             {result && bedtype === "General" && (
               <span className="ans">
-                &#8377;{result.matchbadData.generalType.pricePerbad}
+                &#8377;{result.bedData.generalType.pricePerbad}
               </span>
             )}
             {result && bedtype === "Special" && (
               <span className="ans">
-                &#8377;{result.matchbadData.specialType.pricePerbad}
+                &#8377;{result.bedData.specialType.pricePerbad}
               </span>
             )}
             <div className="loc">

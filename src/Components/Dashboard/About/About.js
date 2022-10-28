@@ -28,10 +28,10 @@ const About = () => {
       <div className="dash_headingg">
       {dash_result && <span className="ans">{dash_result.dataHos.name}</span>}
       </div>
-      <div className="dash_txt">
+      {/* <div className="dash_txt">
         <span>Hospital Id:&nbsp;&nbsp;</span>
         {dash_result && <span className="ans">{dash_result.dataHos.Hospitalid}</span>}
-      </div>
+      </div> */}
       <div className="dash_txt">
         <span>City:&nbsp;&nbsp;</span>
         {dash_result && <span className="ans">{dash_result.dataHos.city}</span>}

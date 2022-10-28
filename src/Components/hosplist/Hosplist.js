@@ -14,18 +14,18 @@ const Hosplist = ({ email, hospid, name, mobilenum, city }) => {
   useEffect(() => {
     if (hospid) {
       const data = {
-        id: hospid,
+        Id: hospid,
       };
       axios
         .post("https://sih-23.herokuapp.com/hospitalbyid", data)
         .then((res) => {
           setBeds_avail(res.data);
-          if((res.data.matchbadData.generalType.availbility + res.data.matchbadData.specialType.availbility) <= 0){
+          if((res.data.bedData.generalType.availbility + res.data.bedData.specialType.availbility) <= 0){
             setDisable('yes');
           }
         })
         .catch((err) => {
-          console.log(err.respone.data.message);
+          console.log(err);
         });
     }
   });
@@ -65,8 +65,8 @@ const Hosplist = ({ email, hospid, name, mobilenum, city }) => {
               <span>Beds Available:</span>
               {beds_avail && (
                 <span className="bluetxt">
-                  {beds_avail.matchbadData.generalType.availbility}(General) +{" "}
-                  {beds_avail.matchbadData.specialType.availbility}(Special)
+                  {beds_avail.bedData.generalType.availbility}(General) +{" "}
+                  {beds_avail.bedData.specialType.availbility}(Special)
                 </span>
               )}{" "}
             </div>

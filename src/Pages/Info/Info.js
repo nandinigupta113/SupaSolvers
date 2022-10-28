@@ -32,7 +32,7 @@ const Info = () => {
        },
        "otherFacilities":otherfacility
     }
-    axios.put('https://sih-23.herokuapp.com/addbad',data)
+    axios.put('https://sih-23.herokuapp.com/addbed',data)
     .then((res) => {
       console.log(res.data);
       navigate('/Dashboard');

@@ -43,11 +43,11 @@ const Bedstatus = () => {
 
       <div className="dash_txt">
         <span>General:&nbsp;&nbsp;</span>
-        {dash_result && <span className="ans">{dash_result.matchbadData.generalType.availbility}</span>}
+        {dash_result && <span className="ans">{dash_result.bedData.generalType.availbility}</span>}
       </div>
       <div className="dash_txt">
         <span>Special:&nbsp;&nbsp;</span>
-        {dash_result && <span className="ans">{dash_result.matchbadData.specialType.availbility}</span>}
+        {dash_result && <span className="ans">{dash_result.bedData.specialType.availbility}</span>}
       </div>
 
 

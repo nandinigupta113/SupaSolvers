@@ -1,0 +1,55 @@
+.dashhsec1{
+    display: flex;
+    justify-content: space-around;
+    margin: 1vh;
+}
+.insec11{
+    display: flex;
+    align-items:center;
+    margin: 1vw;
+    height: 20vh;
+    width: 19vw;
+    border-radius: 0.5rem;
+}
+.ccc{
+    width: 5vw;
+    margin-left: 1vw;
+    text-align: center;
+}
+.xd1{
+    border:3px solid green;
+}
+.xd2{
+    border:3px solid rgb(65, 65, 114);
+}
+.xd3{
+    border:3px solid red;
+}
+.dashhsec2{
+    /* height: 30vh; */
+    /* border:3px solid rgb(65, 65, 114); */
+    gap: 3vh;
+
+}
+.insec22{
+    height: 30vh;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 2vw;
+    text-align: center;
+    width: 15vw;
+
+}
+.outercircle{
+    height: 15vh;
+    width:7.6vw;
+    /* border:2px solid blue; */
+    background:green;
+    border-radius: 50rem;
+}
+.dashsec22{
+    display: flex;
+    justify-content:space-around;
+}
