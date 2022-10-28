@@ -176,9 +176,9 @@ const BedAvailability = () => {
           </div>
           <div className="otherfacility loc">
             <span className="loc">Other Facility:</span>
-            {/* {result && (
-              <span className="ans">{result.matchbedData.otherFacilities}</span>
-            )} */}
+            {result && (
+              <span className="ans">{result.bedData.otherFacilities}</span>
+            )}
           </div>
           <div className="BedsAvailable loc">
             <span>Beds Available:</span>
