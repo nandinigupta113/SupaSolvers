@@ -4,9 +4,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2.5rem;
+    font-size: 2rem;
     height: 5rem;
+    width: 100vw;
+    text-align: center;
 }
 .dist_h{
-    padding: 3rem;
+    margin: 2rem 2rem 2rem;
+}
+.outtablecmp{
+    padding: 1rem;
+    background: #2B96CC;
+    -ms-overflow-style: none; 
 }

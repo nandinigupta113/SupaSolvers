@@ -7,52 +7,80 @@ import Support from "../../Components/Support/Support";
 import Footer from "../../Components/Footer/Footer";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-
+import CircularProgress from '@mui/material/CircularProgress';
 const HospitalsNearby = () => {
-  const [hospdata, setHospdata] = useState([""]);
+  const [hospdata, setHospdata] = useState();
   const [pincode, setPincode] = useState('');
   const [city, setCity] = useState('');
   const [happen, setHappen] = useState('');
-
    useEffect(() => {
     axios
-      .get("https://sih-23.herokuapp.com/all/hospitals")
+      .get("https://wecare-yash.up.railway.app/all/hospitals")
       .then((res) => {
+        // console.log(res.data);
         pincode === "" &&  city === "" && setHospdata(res.data);
       })
       .catch((err) => {
         console.log(err);
-      });
+      });  
   });
 
 
 
   const handlefilter = () =>{
-    pincode !== "" && axios.get(`https://sih-23.herokuapp.com/all/hospitalsby/${pincode}`)
-    .then((res) => {
-      console.log(res.data)
-      if(res.data){
-        setHospdata([""]);
-        setHospdata(res.data);
 
-      }
-    })
-    .catch((err)=> {
-      console.log(err);
-    })
+    if(pincode !== "" && city == ""){
+      const updatedItems = hospdata.filter((curr) => {
+        // console.log(curr.pincode);
+        return (
+          curr.pincode === parseInt(pincode)
+        );
+      })
+      setHospdata(updatedItems);
+    }
+    else if(pincode == "" && city !== ""){
+      const updatedItems = hospdata.filter((curr) => {
+        return (
+          curr.city === city
+        );
+      })
+      setHospdata(updatedItems);
+    }
+    else if(pincode !== "" && city !== ""){
+      const updatedItems = hospdata.filter((curr) => {
+        return (
+          curr.city === city && curr.pincode === parseInt(pincode)
+        );
+      })
+      setHospdata(updatedItems);
+    }
 
-    city !== "" &&  axios.get(`https://sih-23.herokuapp.com/all/hospitals/${city}`)
-    .then((res) => {
-      console.log(res.data)
-      if(res.data){
-        setHospdata([""]);
-        setHospdata(res.data);
+    // pincode !== "" && axios.get(`https://wecare-yash.up.railway.app/all/hospitalsbypin/${pincode}`)
+    // .then((res) => {
+    //   console.log(res.data)
+    //   if(res.data){
+    //     setHospdata();
+    //     setHospdata(res.data);
+    //   }
+    // })
+    // .catch((err)=> {
+    //   console.log(err);
+    // })
 
-      }
-    })
-    .catch((err)=> {
-      console.log(err);
-    })
+    // city !== "" &&  axios.get(`https://wecare-yash.up.railway.app/all/hospitals/${city}`)
+    // .then((res) => {
+    //   console.log(res.data)
+    //   if(res.data){
+    //     setHospdata();
+    //     setHospdata(res.data);
+
+    //   }
+    // })
+    // .catch((err)=> {
+    //   console.log(err);
+    // })
+
+
 
 
   }
@@ -69,6 +97,7 @@ const HospitalsNearby = () => {
           defaultValue=""
           size="small"
           value={pincode}
+          type="number"
           onChange={(e) => setPincode(e.target.value)}
         />
         <TextField
@@ -76,6 +105,7 @@ const HospitalsNearby = () => {
           id="outlined-size-small"
           defaultValue=""
           size="small"
+          type="text"
           value={city}
           onChange={(e) => setCity(e.target.value)}
         />
@@ -95,16 +125,19 @@ const HospitalsNearby = () => {
       </div>
       <div className="hosplisttt">
 
-        {hospdata &&
+        {hospdata ?
           hospdata.map((val, i) => (
             <Hosplist
+              key={val._id}
               email={val.email}
               hospid={val._id}
               name={val.name}
               city={val.city}
               mobilenum={val.mobileNum}
             />
-          ))}
+          )) : 
+          <div className="cprog"><CircularProgress className="incprog" color="inherit"/></div>
+        }
       </div>
 
       <Support />

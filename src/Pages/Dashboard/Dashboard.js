@@ -17,10 +17,10 @@ const Dashboard = () => {
       setDash_id(localStorage.getItem('_id'));
       console.log(dash_id);
       if(dash_id){
-          axios.get(`https://sih-23.herokuapp.com/hospital/${dash_id}`)
+          axios.get(`https://wecare-yash.up.railway.app/hospital/${dash_id}`)
           .then((res)=>{
             //   console.log(res.data)
-              setDash_result(res.data);
+              setDash_result(res.data[0]);
             //   dash_result && console.log(dash_result.dataHos);
           })
           .catch((err)=>{
@@ -69,8 +69,10 @@ const Dashboard = () => {
                 <img src={Hosprefimg}></img>
             </div>
             <div className='img_below'>
-            {dash_result && <span className="main">{dash_result.dataHos.name}</span>}
-            {dash_result && <span className="main">{dash_result.dataHos.city}</span>}
+            {dash_result && <span className="main">{dash_result.hospitalId[0].name}</span>}
+            {!dash_result && <span className="ans">Loading..</span>}
+            {dash_result && <span className="main">{dash_result.hospitalId[0].city}</span>}
+            {!dash_result && <span className="ans">Loading..</span>}
             </div>
             <div>
                {clicked === 'about' && <button className='edit_btn' onClick={(e) => {e.preventDefault();navigate('/Updatebed')}}>Edit Details</button>}

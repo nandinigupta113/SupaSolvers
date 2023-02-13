@@ -3,6 +3,7 @@ import "./SignIncomp.css"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import CircularProgress from '@mui/material/CircularProgress';
 import "react-toastify/dist/ReactToastify.css";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 const SignIncomp = () => {
@@ -10,23 +11,27 @@ const SignIncomp = () => {
   const [userId,setUserId] = useState("");
   const [psswd,setPsswd] = useState("");
   const [hospid,setHospid] = useState('');
+  const [ans, setans] = useState(false);
   let token;
   const handlesignin = (e) => {
+    setans(true);
     e.preventDefault();
     const data = {
       email:userId,
       password:psswd
     }
-    axios.post('https://sih-23.herokuapp.com/loginhospital',data)
+    axios.post('https://wecare-yash.up.railway.app/login',data)
     .then((res) => {
       console.log(res.data);
       if(res.data.cookie_token){
+        setans(false);
         localStorage.setItem("token",res.data.cookie_token);
         localStorage.setItem("_id",res.data.hosId);
         navigate('/Dashboard');
       }
     })
     .catch((err) => {
+      setans(false);
       console.log(err);
       toast.error('Enter correct details')
     })
@@ -48,14 +53,14 @@ const SignIncomp = () => {
             <div className="Userbox">
               <div className="text1" id="text">
                 <span></span>
-                <input onChange={(e) => {setUserId(e.target.value)}} value={userId} placeholder="User Id" />
+                <input onChange={(e) => {setUserId(e.target.value)}} value={userId} placeholder="Email Id" />
               </div>
               <div className="text1">
                 <span></span>
                 <input onChange={(e) => {setPsswd(e.target.value)}} value={psswd} placeholder="Password" />
               </div>
               <div className="signbtn">
-                <button onClick={handlesignin}>Sign In</button>
+              {ans ? <button onClick={handlesignin}><CircularProgress color="inherit"/></button> : <button onClick={handlesignin}>Sign Up</button>}
               </div>
             </div>
           </div>

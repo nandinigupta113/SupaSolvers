@@ -16,10 +16,10 @@ const Bedstatus = () => {
   useEffect(() => {
     setDash_id(localStorage.getItem('_id'));
     if(dash_id){
-        axios.get(`https://sih-23.herokuapp.com/hospital/${dash_id}`)
+      axios.get(`https://wecare-yash.up.railway.app/hospital/${dash_id}`)
         .then((res)=>{
             // console.log(res.data)
-            setDash_result(res.data);
+            setDash_result(res.data[0]);
             // dash_result && console.log(dash_result.matchbadData.generalType.availbility);
         })
         .catch((err)=>{
@@ -43,11 +43,13 @@ const Bedstatus = () => {
 
       <div className="dash_txt">
         <span>General:&nbsp;&nbsp;</span>
-        {dash_result && <span className="ans">{dash_result.bedData.generalType.availbility}</span>}
+        {dash_result && <span className="ans">{dash_result.generalType.availbility}</span>}
+        {!dash_result && <span className="ans">Loading..</span>}
       </div>
       <div className="dash_txt">
         <span>Special:&nbsp;&nbsp;</span>
-        {dash_result && <span className="ans">{dash_result.bedData.specialType.availbility}</span>}
+        {dash_result && <span className="ans">{dash_result.specialType.availbility}</span>}
+        {!dash_result && <span className="ans">Loading..</span>}
       </div>
 
 

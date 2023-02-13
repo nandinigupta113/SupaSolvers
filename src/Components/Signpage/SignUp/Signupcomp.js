@@ -4,6 +4,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import CircularProgress from '@mui/material/CircularProgress';
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 const Signupcomp = () => {
   const navigate = useNavigate();
@@ -17,10 +18,11 @@ const Signupcomp = () => {
   const [hospitalId, setHospitalId] = useState("");
   const [hospitaltype, setHospitaltype] = useState("");
   const [pincode, setPincode] = useState("");
-
+  const [ans, setans] = useState(false);
   let token;
   const handlesignup = (e) =>{
     e.preventDefault();
+    setans(true);
     const data = {
       name: hospitalName,
       email: email,
@@ -32,16 +34,18 @@ const Signupcomp = () => {
       pincode:pincode,
       hospitaltype:hospitaltype
     }
-    axios.post('https://sih-23.herokuapp.com/registerhospital',data)
+    axios.post('https://wecare-yash.up.railway.app/register',data)
     .then((res) => {
       console.log(res.data);
       if(res.data.token){     
+        setans(false);
         localStorage.setItem("token",res.data.token);
         localStorage.setItem("_id",res.data.save._id);
         navigate('/Info');
       }
     })
     .catch((err) => {
+      setans(false);
       console.log(err);
       toast.error('Enter valid details');
     })
@@ -109,12 +113,9 @@ const Signupcomp = () => {
             <input onChange={(e) => {setPsswd(e.target.value)}} value={psswd} placeholder="Password" />
           </div>
           <div className="signbtn2">
-            <button onClick={handlesignup}>Sign Up</button>
+            {ans ? <button onClick={handlesignup}><CircularProgress color="inherit"/></button> : <button onClick={handlesignup}>Sign Up</button>}
       </div>
         </div>
-      {/* <div className="signbtn2">
-            <button onClick={handlesignup}>Sign Up</button>
-      </div> */}
       </div>
       </div>
       <ToastContainer />

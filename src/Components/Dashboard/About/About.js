@@ -9,10 +9,10 @@ const About = () => {
     setDash_id(localStorage.getItem('_id'));
     console.log(dash_id);
     if(dash_id){
-        axios.get(`https://sih-23.herokuapp.com/hospital/${dash_id}`)
-        .then((res)=>{
-            // console.log(res.data)
-            setDash_result(res.data);
+      axios.get(`https://wecare-yash.up.railway.app/hospital/${dash_id}`)
+      .then((res)=>{
+            // console.log(res.data[0]);
+            setDash_result(res.data[0]);
             // dash_result && console.log(dash_result.dataHos);
         })
         .catch((err)=>{
@@ -26,7 +26,8 @@ const About = () => {
   return (
     <div className="About">
       <div className="dash_headingg">
-      {dash_result && <span className="ans">{dash_result.dataHos.name}</span>}
+      {dash_result && <span className="ans">{dash_result.hospitalId[0].name}</span>}
+      {!dash_result && <span className="ans">Loading..</span>}
       </div>
       {/* <div className="dash_txt">
         <span>Hospital Id:&nbsp;&nbsp;</span>
@@ -34,24 +35,29 @@ const About = () => {
       </div> */}
       <div className="dash_txt">
         <span>City:&nbsp;&nbsp;</span>
-        {dash_result && <span className="ans">{dash_result.dataHos.city}</span>}
+        {dash_result && <span className="ans">{dash_result.hospitalId[0].city}</span>}
+        {!dash_result && <span className="ans">Loading..</span>}
       </div>
       <div className="dash_txt">
         <span>Address:&nbsp;&nbsp;</span>
-        {dash_result && <span className="ans">{dash_result.dataHos.address}</span>}
+        {dash_result && <span className="ans">{dash_result.hospitalId[0].address}</span>}
+        {!dash_result && <span className="ans">Loading..</span>}
       </div>
       <div className="dash_txt">
         <span>State:&nbsp;&nbsp;</span>
-        {dash_result && <span className="ans">{dash_result.dataHos.state}</span>}
+        {dash_result && <span className="ans">{dash_result.hospitalId[0].state}</span>}
+        {!dash_result && <span className="ans">Loading..</span>}
       </div>
 
       <div className="dash_txt">
         <span>Phone No:&nbsp;&nbsp;</span>
-        {dash_result && <span className="ans">{dash_result.dataHos.mobileNum}</span>}
+        {dash_result && <span className="ans">{dash_result.hospitalId[0].mobileNum}</span>}
+        {!dash_result && <span className="ans">Loading..</span>}
       </div>
       <div className="dash_txt">
       <span>Email:&nbsp;&nbsp;</span>
-      {dash_result && <span className="ans">{dash_result.dataHos.email}</span>}
+      {dash_result && <span className="ans">{dash_result.hospitalId[0].email}</span>}
+      {!dash_result && <span className="ans">Loading..</span>}
       </div>
     </div>
   );

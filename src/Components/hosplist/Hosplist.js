@@ -4,7 +4,9 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 // import Button from '@mui/material/Button';
 import Button from '@mui/material/Button';
+import CircularProgress from '@mui/material/CircularProgress';
 import { width } from "@mui/system";
+import { LocalDining } from "@mui/icons-material";
 const Hosplist = ({ email, hospid, name, mobilenum, city }) => {
   const navigate = useNavigate();
   const [beds_avail, setBeds_avail] = useState("");
@@ -13,14 +15,15 @@ const Hosplist = ({ email, hospid, name, mobilenum, city }) => {
 
   useEffect(() => {
     if (hospid) {
-      const data = {
-        Id: hospid,
-      };
+      // const data = {
+      //   Id: hospid,
+      // };
       axios
-        .post("https://sih-23.herokuapp.com/hospitalbyid", data)
+        .get(`https://wecare-yash.up.railway.app/hospital/${hospid}`)
         .then((res) => {
-          setBeds_avail(res.data);
-          if((res.data.bedData.generalType.availbility + res.data.bedData.specialType.availbility) <= 0){
+          setBeds_avail(res.data[0]);
+          // res.data[0] && console.log( res.data[0].generalType.availbility + res.data[0].specialType.availbility);
+          if(res.data[0] && (res.data[0].generalType.availbility + res.data[0].specialType.availbility) <= 0){
             setDisable('yes');
           }
         })
@@ -63,19 +66,18 @@ const Hosplist = ({ email, hospid, name, mobilenum, city }) => {
 
             <div className="line">
               <span>Beds Available:</span>
-              {beds_avail && (
+              {beds_avail ? (
                 <span className="bluetxt">
-                  {beds_avail.bedData.generalType.availbility}(General) +{" "}
-                  {beds_avail.bedData.specialType.availbility}(Special)
+                  {beds_avail.generalType.availbility}(General) +{" "}
+                  {beds_avail.specialType.availbility}(Special)
                 </span>
-              )}{" "}
+              ) : <span className="bluetxt">Loading..</span> }
+              {" "}
             </div>
           </div>
         </div>
         <div className="moreinfo">
-
           <span>
-
                  {disable === '' && <Button  color="success"sx={{width:"10rem"}} variant="contained"  onClick={(e) => {
               e.preventDefault();
               navigate("/bedavailability", { state: { hospid } });

@@ -16,7 +16,6 @@ function createData(serialno, name, phone, aadhar, bedId) {
 const General = () => {
   const [dash_list, setDash_list] = useState("");
   useEffect(() => {
-    
     const data = {
       cookie_token: localStorage.getItem("token"),
     };

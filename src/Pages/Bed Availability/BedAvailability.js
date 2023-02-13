@@ -72,13 +72,13 @@ const BedAvailability = () => {
   };
 
   useEffect(() => {
-    const data = {
-      Id: hospid,
-    };
+    // const data = {
+    //   Id: hospid,
+    // };
     axios
-      .post("https://sih-23.herokuapp.com/hospitalbyid", data)
+      .get(`https://wecare-yash.up.railway.app/hospital/${hospid}`)
       .then((res) => {
-        setResult(res.data);
+        setResult(res.data[0]);
         // console.log(res.data);
       })
       .catch((err) => {
@@ -160,7 +160,8 @@ const BedAvailability = () => {
         </div>}
         <div className="secdiv2">
           <div className="titlehosp">
-            {result && <span>{result.dataHos.name}</span>}
+            {result && <span>{result.hospitalId[0].name}</span>}
+            {!result && <span>Loading...</span>}
             {/* <StarIcon sx={{ marginTop: "3rem", marginLeft: "1rem" }} />
       <StarIcon sx={{ marginTop: "3rem", marginLeft: "1rem" }} />
       <StarIcon sx={{ marginTop: "3rem", marginLeft: "1rem" }} />
@@ -168,28 +169,28 @@ const BedAvailability = () => {
           </div>
           <div className="loc">
             <span>Location:</span>
-            {result && <span className="ans">{result.dataHos.city}</span>}
+            {result && <span className="ans">{result.hospitalId[0].city}</span>}
           </div>
           <div className="ContactNo loc">
             <span>Contact No:</span>
-            {result && <span className="ans">{result.dataHos.mobileNum}</span>}
+            {result && <span className="ans">{result.hospitalId[0].mobileNum}</span>}
           </div>
           <div className="otherfacility loc">
             <span className="loc">Other Facility:</span>
             {result && (
-              <span className="ans">{result.bedData.otherFacilities}</span>
+              <span className="ans">{result.otherFacilities}</span>
             )}
           </div>
           <div className="BedsAvailable loc">
             <span>Beds Available:</span>
             {result && (
               <span className="ans">
-                {result.bedData.generalType.availbility}(General) +{" "}
-                {result.bedData.specialType.availbility}(Special)
+                {result.generalType.availbility}(General) +{" "}
+                {result.specialType.availbility}(Special)
               </span>
             )}
           </div>
-          <div className="BedsPrice loc">
+          <div className="BedsPrice loc btype">
             <span>Bed Type:</span>
 
             <FormControl sx={{ m: 1, minWidth: 180 }} size="small">
@@ -206,18 +207,21 @@ const BedAvailability = () => {
               </Select>
             </FormControl>
           </div>
-          <div className="BedsPrice loc">
+          <div className="BedsPrice loc btype">
+            <div className="inprice">
             <span>Price For Bed:</span>
             {result && bedtype === "General" && (
-              <span className="ans">
-                &#8377;{result.bedData.generalType.pricePerbad}
+              <span className="blankspace ans">
+                &#8377;{result.generalType.pricePerbad}
               </span>
             )}
             {result && bedtype === "Special" && (
-              <span className="ans">
-                &#8377;{result.bedData.specialType.pricePerbad}
+              <span className="blankspace ans">
+                &#8377;{result.specialType.pricePerbad}
               </span>
             )}
+            {bedtype === "" && <div className="blankspace"></div>}
+            </div>
             <div className="loc">
               <span>Aadhar Card No:</span>
               <input
