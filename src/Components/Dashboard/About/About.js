@@ -11,8 +11,8 @@ const About = () => {
     if(dash_id){
       axios.get(`https://wecare-yash.up.railway.app/hospital/${dash_id}`)
       .then((res)=>{
-            // console.log(res.data[0]);
-            setDash_result(res.data[0]);
+            // console.log(res.data.result[0]);
+            setDash_result(res.data.result[0]);
             // dash_result && console.log(dash_result.dataHos);
         })
         .catch((err)=>{

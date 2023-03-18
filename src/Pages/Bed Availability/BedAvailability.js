@@ -56,6 +56,7 @@ const BedAvailability = () => {
   const [userage, setUserage] = useState("");
   const [aadharno, setAadharno] = useState("");
   const [open, setOpen] = React.useState(false);
+  const [price, setPrice] = React.useState(0);
 
   // const [otp,setOtp] = useState('');
 
@@ -75,11 +76,12 @@ const BedAvailability = () => {
     // const data = {
     //   Id: hospid,
     // };
+    
     axios
       .get(`https://wecare-yash.up.railway.app/hospital/${hospid}`)
       .then((res) => {
-        setResult(res.data[0]);
-        // console.log(res.data);
+        setResult(res.data.result[0]);
+        // console.log(res.data.result[0]);
       })
       .catch((err) => {
         console.log(err);
@@ -96,13 +98,16 @@ const BedAvailability = () => {
       parseInt(pin6);
 
     const data = {
-      bedAllotId: store.bedAllotId,
+      bookingId: store.bookingId,
       bedId: store.bedId,
-      otp: value,
+      hosEmail: store.hosEmail,
+      hosName: store.hosName,
+      OTP: value,
+      
     };
     // console.log(data);
     axios
-      .put("https://sih-23.herokuapp.com/bed/bookingbed/verify", data)
+      .put("https://wecare-yash.up.railway.app/bed/bookingbed/verify", data)
       .then((res) => {
         console.log(res.data);
         if (res.data === "your bed has been booked") {
@@ -112,7 +117,7 @@ const BedAvailability = () => {
         }
       })
       .catch((err) => {
-        // console.log(err);
+        console.log(err);
         toast.error("Enter correct OTP");
       });
   };
@@ -128,14 +133,15 @@ const BedAvailability = () => {
     handleClickOpen();
     const data2 = {
       patientName: username,
-      Adhar: aadharno,
       email: useremailid,
+      Adhar: aadharno,
       age: parseInt(userage),
       type: bedtype,
+      price: bedtype === "General"? result.generalType.pricePerbad : result.generalType.pricePerbad
     };
     // console.log(data2);
     axios
-      .put(`https://sih-23.herokuapp.com/bed/booking/${hospid}`, data2)
+      .put(`https://wecare-yash.up.railway.app/bed/booking/${hospid}`, data2)
       .then((res) => {
         setStore(res.data);
         console.log(res.data);

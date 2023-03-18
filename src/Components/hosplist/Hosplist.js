@@ -21,9 +21,9 @@ const Hosplist = ({ email, hospid, name, mobilenum, city }) => {
       axios
         .get(`https://wecare-yash.up.railway.app/hospital/${hospid}`)
         .then((res) => {
-          setBeds_avail(res.data[0]);
+          setBeds_avail(res.data.result[0]);
           // res.data[0] && console.log( res.data[0].generalType.availbility + res.data[0].specialType.availbility);
-          if(res.data[0] && (res.data[0].generalType.availbility + res.data[0].specialType.availbility) <= 0){
+          if(res.data.result[0] && (res.data.result[0].generalType.availbility + res.data.result[0].specialType.availbility) <= 0){
             setDisable('yes');
           }
         })

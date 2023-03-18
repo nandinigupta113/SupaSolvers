@@ -22,7 +22,7 @@ const Special = () => {
     };
     axios
       .put(
-        "https://sih-23.herokuapp.com/bed/hospital/bookingbeds/Special",
+        "https://wecare-yash.up.railway.app/bed/hospital/bookingbeds/Special",
         data
       )
       .then((res) => {
@@ -35,9 +35,8 @@ const Special = () => {
   });
 
   const deletecell = (val) => {
-    console.log(`https://sih-23.herokuapp.com/bed/booking/${val}`);
     console.log(val);
-    const url = `https://sih-23.herokuapp.com/bed/booking/${val}`;
+    const url = `https://wecare-yash.up.railway.app/bed/booking/${val}`;
     if (val) {
       axios
         .delete(url)
