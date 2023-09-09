@@ -155,7 +155,7 @@ const Info = () => {
               </div>            
             </div>
             <div className="signbtn">
-            {ans ? <button onClick={handleinfosubmit}><CircularProgress color="inherit"/></button> : <button onClick={handleinfosubmit}>Sign Up</button>}
+            {ans ? <button onClick={handleinfosubmit}><CircularProgress color="inherit"/></button> : <button onClick={handleinfosubmit}>Submit</button>}
             </div>        
           </div>
         </div>

@@ -1,0 +1,11 @@
+.mobile_view{
+    background: url(error.svg);
+    background-size: 100% 100%;
+    text-transform: uppercase;
+    color:red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    min-width: 30%;
+}

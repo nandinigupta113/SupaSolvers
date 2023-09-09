@@ -1,0 +1,27 @@
+.images{
+    /* display: flex;
+    justify-content: space-around; */
+    margin-bottom: 2rem;
+}
+.images img{
+    height: 40vh;
+    width: 20vw;
+    border-radius:0.5rem;
+    object-fit: cover;
+}
+.hospt_img{
+    font-size: 25px;
+    /* font-family: 'Secular One', sans-serif;  */
+}
+.hospname{
+    margin-left: 1rem;
+    /* color: whitesmoke; */
+    font-weight: 550;
+    text-shadow: 2px 2px 4px #a2a7b3;}
+
+.owl-theme .owl-dots, .owl-theme .owl-nav{
+    display: none;
+}
+.Slider{
+    margin-top:3rem;
+}

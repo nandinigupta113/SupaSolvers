@@ -33,7 +33,6 @@ const Footer = () => {
           <span>Hospitals Associate</span>
           <span>Health Services</span>
           <span>Health Equipments</span>
-          <span>Login</span>
         </div>
       </div>
       <div className="baseline">

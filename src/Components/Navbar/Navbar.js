@@ -75,7 +75,7 @@ const Navbar = ({defaulth}) => {
           <div className='location'>
           {/* <span><PlaceOutlinedIcon sx={{cursor:'pointer',marginTop:'0.4rem', height:"1.7rem",width:"2rem"}}/></span>
           <span>24/7</span> */}
-          <span >Emergency</span>
+          <span style={{color:'black'}}>Emergency</span>
           <AddBoxIcon sx={{color:"white"}}/>
 
 

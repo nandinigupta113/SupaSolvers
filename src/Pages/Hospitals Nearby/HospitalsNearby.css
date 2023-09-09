@@ -5,7 +5,7 @@
     gap: 4rem;
 }
 .cprog{
-    width: 100vw; 
+    /* width: 100vw;  */
     display: flex;
     justify-content: center;
     margin-top: 2rem;

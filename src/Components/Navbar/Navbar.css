@@ -8,12 +8,12 @@
 }
 .logo{
     height:3rem;
-    width: 50vw;
+    width: 30vw;
     display: flex;
     justify-content: center;
 }
 .head{
-    width: 50vw;
+    width: 70vw;
     display: flex;
     justify-content: space-around;
     align-items: center;

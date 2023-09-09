@@ -60,7 +60,7 @@ const SignIncomp = () => {
                 <input onChange={(e) => {setPsswd(e.target.value)}} value={psswd} placeholder="Password" />
               </div>
               <div className="signbtn">
-              {ans ? <button onClick={handlesignin}><CircularProgress color="inherit"/></button> : <button onClick={handlesignin}>Sign Up</button>}
+              {ans ? <button onClick={handlesignin}><CircularProgress color="inherit" sx={{fontSize : 20}}/></button> : <button onClick={handlesignin}>Sign In</button>}
               </div>
             </div>
           </div>
