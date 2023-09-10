@@ -34,7 +34,7 @@ const Signupcomp = () => {
       pincode:pincode,
       hospitaltype:hospitaltype
     }
-    axios.post('https://wecare-yash.up.railway.app/register',data)
+    axios.post(`${process.env.REACT_APP_API}register`,data)
     .then((res) => {
       console.log(res.data);
       if(res.data.token){     

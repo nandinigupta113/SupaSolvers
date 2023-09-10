@@ -19,7 +19,7 @@ const Hosplist = ({ email, hospid, name, mobilenum, city }) => {
       //   Id: hospid,
       // };
       axios
-        .get(`https://wecare-yash.up.railway.app/hospital/${hospid}`)
+        .get(`${process.env.REACT_APP_API}hospital/${hospid}`)
         .then((res) => {
           setBeds_avail(res.data.result[0]);
           // res.data[0] && console.log( res.data[0].generalType.availbility + res.data[0].specialType.availbility);
@@ -38,7 +38,7 @@ const Hosplist = ({ email, hospid, name, mobilenum, city }) => {
     <div className="Hosplist">
       <div className="inHosplist">
         <div className="hosplistimg">
-          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2053&q=80"></img>
+          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2053&q=80" alt=""></img>
         </div>
         <div className="hosplisttxt">
           <div className="hosplisttitle">
@@ -74,9 +74,7 @@ const Hosplist = ({ email, hospid, name, mobilenum, city }) => {
               ) : <span className="bluetxt">Loading..</span> }
               {" "}
             </div>
-          </div>
-        </div>
-        <div className="moreinfo">
+            <div className="moreinfo">
           <span>
                  {disable === '' && <Button  color="success"sx={{width:"10rem"}} variant="contained"  onClick={(e) => {
               e.preventDefault();
@@ -86,6 +84,10 @@ const Hosplist = ({ email, hospid, name, mobilenum, city }) => {
 
           </span>
         </div>
+
+          </div>
+        </div>
+      
       </div>
     </div>
     <div>

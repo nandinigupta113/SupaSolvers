@@ -15,7 +15,7 @@ const HospitalsNearby = () => {
   const [happen, setHappen] = useState('');
    useEffect(() => {
     axios
-      .get("https://wecare-yash.up.railway.app/all/hospitals")
+      .get(`${process.env.REACT_APP_API}all/hospitals`)
       .then((res) => {
         // console.log(res.data);
         pincode === "" &&  city === "" && setHospdata(res.data);

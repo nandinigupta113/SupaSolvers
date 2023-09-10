@@ -20,7 +20,7 @@ const SignIncomp = () => {
       email:userId,
       password:psswd
     }
-    axios.post('https://wecare-yash.up.railway.app/login',data)
+    axios.post(`${process.env.REACT_APP_API}login`,data)
     .then((res) => {
       console.log(res.data);
       if(res.data.cookie_token){
@@ -60,7 +60,7 @@ const SignIncomp = () => {
                 <input onChange={(e) => {setPsswd(e.target.value)}} value={psswd} placeholder="Password" />
               </div>
               <div className="signbtn">
-              {ans ? <button onClick={handlesignin}><CircularProgress color="inherit" sx={{fontSize : 20}}/></button> : <button onClick={handlesignin}>Sign In</button>}
+              {ans ? <button onClick={handlesignin}><CircularProgress color="inherit"/></button> : <button onClick={handlesignin}>Sign In</button>}
               </div>
             </div>
           </div>

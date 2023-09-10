@@ -76,9 +76,9 @@ const BedAvailability = () => {
     // const data = {
     //   Id: hospid,
     // };
-    
+
     axios
-      .get(`https://wecare-yash.up.railway.app/hospital/${hospid}`)
+      .get(`${process.env.REACT_APP_API}hospital/${hospid}`)
       .then((res) => {
         setResult(res.data.result[0]);
         // console.log(res.data.result[0]);
@@ -103,11 +103,10 @@ const BedAvailability = () => {
       hosEmail: store.hosEmail,
       hosName: store.hosName,
       OTP: value,
-      
     };
     // console.log(data);
     axios
-      .put("https://wecare-yash.up.railway.app/bed/bookingbed/verify", data)
+      .put(`${process.env.REACT_APP_API}bed/bookingbed/verify`, data)
       .then((res) => {
         console.log(res.data);
         if (res.data === "your bed has been booked") {
@@ -137,21 +136,23 @@ const BedAvailability = () => {
       Adhar: aadharno,
       age: parseInt(userage),
       type: bedtype,
-      price: bedtype === "General"? result.generalType.pricePerbad : result.generalType.pricePerbad
+      price:
+        bedtype === "General"
+          ? result.generalType.pricePerbad
+          : result.generalType.pricePerbad,
     };
     // console.log(data2);
     axios
-      .put(`https://wecare-yash.up.railway.app/bed/booking/${hospid}`, data2)
+      .put(`${process.env.REACT_APP_API}bed/booking/${hospid}`, data2)
       .then((res) => {
         setStore(res.data);
         console.log(res.data);
       })
       .catch((err) => {
         console.log(err.response.data);
-        if(err.response.data === 'adhar is already exist'){
+        if (err.response.data === "adhar is already exist") {
           toast.error("Bed has been already booked with this aadhar no.");
-        }
-        else{
+        } else {
           toast.error("Enter valid details");
         }
       });
@@ -161,9 +162,11 @@ const BedAvailability = () => {
     <div className="BedAvailability">
       <Navbar defaulth={"Hospitals Nearby"} />
       <div className="availablesec">
-        {<div className="secdiv1">
-          <img src={Hosprefimg}></img>
-        </div>}
+        {
+          <div className="secdiv1">
+            <img src={Hosprefimg} alt=""></img>
+          </div>
+        }
         <div className="secdiv2">
           <div className="titlehosp">
             {result && <span>{result.hospitalId[0].name}</span>}
@@ -179,13 +182,13 @@ const BedAvailability = () => {
           </div>
           <div className="ContactNo loc">
             <span>Contact No:</span>
-            {result && <span className="ans">{result.hospitalId[0].mobileNum}</span>}
+            {result && (
+              <span className="ans">{result.hospitalId[0].mobileNum}</span>
+            )}
           </div>
           <div className="otherfacility loc">
             <span className="loc">Other Facility:</span>
-            {result && (
-              <span className="ans">{result.otherFacilities}</span>
-            )}
+            {result && <span className="ans">{result.otherFacilities}</span>}
           </div>
           <div className="BedsAvailable loc">
             <span>Beds Available:</span>
@@ -215,18 +218,18 @@ const BedAvailability = () => {
           </div>
           <div className="BedsPrice loc btype">
             <div className="inprice">
-            <span>Price For Bed:</span>
-            {result && bedtype === "General" && (
-              <span className="blankspace ans">
-                &#8377;{result.generalType.pricePerbad}
-              </span>
-            )}
-            {result && bedtype === "Special" && (
-              <span className="blankspace ans">
-                &#8377;{result.specialType.pricePerbad}
-              </span>
-            )}
-            {bedtype === "" && <div className="blankspace"></div>}
+              <span>Price For Bed:</span>
+              {result && bedtype === "General" && (
+                <span className="blankspace ans">
+                  &#8377;{result.generalType.pricePerbad}
+                </span>
+              )}
+              {result && bedtype === "Special" && (
+                <span className="blankspace ans">
+                  &#8377;{result.specialType.pricePerbad}
+                </span>
+              )}
+              {bedtype === "" && <div className="blankspace"></div>}
             </div>
             <div className="loc">
               <span>Aadhar Card No:</span>
@@ -275,7 +278,13 @@ const BedAvailability = () => {
               }}
             ></input>
           </div>
+
           <div className="bookbed">
+            
+            {/* <Button variant="contained" disabled>
+              Disabled
+            </Button> */}
+
             <Button
               onClick={handlebedbooking}
               variant="contained"

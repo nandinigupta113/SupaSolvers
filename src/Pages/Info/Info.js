@@ -23,7 +23,7 @@ const Info = () => {
   const handleinfosubmit = (e) => {
     e.preventDefault();
     setans(true);
-    if(generalbedprice == '' || generalquant == '' || specialbedprice == '' || specialquant == ''){
+    if(generalbedprice === '' || generalquant === '' || specialbedprice === '' || specialquant === ''){
       setans(false);
       toast.error('Enter Valid Details');
     }
@@ -40,7 +40,7 @@ const Info = () => {
          },
          "otherFacilities":otherfacility
       }
-      axios.patch('https://wecare-yash.up.railway.app/addbed',data)
+      axios.patch(`${process.env.REACT_APP_API}addbed`,data)
       .then((res) => {
         console.log(res.data);
         setans(false);
@@ -56,12 +56,12 @@ const Info = () => {
 
   return (
     <div className="Info">
-      <img className="signlogo" src={logo} />
+      <img className="signlogo" src={logo} alt="" />
       <div className="center">
         <div className="incenter">
           <div className="layer1">
             <div className="signIn_logo">
-              <img src={logo} />
+              <img src={logo} alt=""/>
             </div>
             <span className="welcome">Welcomes You</span>
           </div>

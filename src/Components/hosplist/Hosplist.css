@@ -25,7 +25,7 @@
     border-radius: 0.7rem;
 }
 .hosplisttxt{
-    width: 33vw;
+    width:45vw;
 
 }
 .hosplisttitle{
@@ -48,11 +48,9 @@
 .moreinfo{
     font-size: 1.5rem;
     color:#2B96CC;
-    height: 32vh;
     display: flex;
-    flex-direction: column;
-    margin-left: 2rem;
     justify-content: flex-end;
+    margin-top: 10px;
 }
 .moreinfo span{
     color: #2B96CC;

@@ -18,7 +18,7 @@ useEffect(() => {
     const data = {
         cookie_token:token
     }
-    axios.put('https://sih-23.herokuapp.com/all/pichart',data)
+    axios.put(`${process.env.REACT_APP_API}all/pichart`,data)
     .then((res) => {
         console.log(res.data);
         setDaata(res.data);

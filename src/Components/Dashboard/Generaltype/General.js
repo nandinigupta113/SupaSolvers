@@ -21,7 +21,7 @@ const General = () => {
     };
     axios
       .put(
-        "https://wecare-yash.up.railway.app/bed/hospital/bookingbeds/General",
+          `${process.env.REACT_APP_API}bed/hospital/bookingbeds/General`,
         data
       )
       .then((res) => {
@@ -34,10 +34,8 @@ const General = () => {
   });
 
   const deletecell = (val) => {
-    
-    console.log(`https://wecare-yash.up.railway.app/bed/booking/${val}`);
-    console.log(val);
-    const url = `https://wecare-yash.up.railway.app/bed/booking/${val}`;
+  
+    const url = `${process.env.REACT_APP_API}/bed/booking/${val}`;
     if (val) {
       axios
         .delete(url)

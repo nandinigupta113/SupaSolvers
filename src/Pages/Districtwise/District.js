@@ -18,7 +18,7 @@ const District = () => {
 
   useEffect(() => {
     axios
-      .get("https://wecare-yash.up.railway.app/all/data-district")
+      .get(`${process.env.REACT_APP_API}all/data-district`)
       .then((res) => {
         // console.log(res.data[0]._id);
         setDash_list(res.data);

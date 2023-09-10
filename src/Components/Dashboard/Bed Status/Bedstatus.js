@@ -16,7 +16,7 @@ const Bedstatus = () => {
   useEffect(() => {
     setDash_id(localStorage.getItem('_id'));
     if(dash_id){
-      axios.get(`https://wecare-yash.up.railway.app/hospital/${dash_id}`)
+      axios.get(`${process.env.REACT_APP_API}hospital/${dash_id}`)
         .then((res)=>{
             // console.log(res.data)
             setDash_result(res.data.result[0]);

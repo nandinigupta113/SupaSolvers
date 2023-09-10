@@ -7,12 +7,12 @@ const Sign = () => {
   const [choice, setChoice] = useState("SignIn");
   return (
     <>
-      <img className="signlogo" src={logo} />
+      <img className="signlogo" src={logo} alt=""/>
       <div className="SignIn">
         <div className="signInbox">
           <div className="layer1">
             <div className="signIn_logo">
-              <img src={logo} />
+              <img src={logo} alt=""/>
             </div>
             <span className="welcome">Welcomes You</span>
           </div>
