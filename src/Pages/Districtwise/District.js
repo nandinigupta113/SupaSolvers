@@ -51,7 +51,20 @@ const District = () => {
                   {/* <TableCell align="right">Bed ID</TableCell> */}
                 </TableRow>
               </TableHead>
-
+              {!dash_list && <TableRow>
+                <TableCell align="right" >
+                  </TableCell>
+                  <TableCell align="right" >
+              Loading..
+                  </TableCell>
+                  <TableCell align="right" >
+              Loading..
+                  </TableCell>
+                  <TableCell align="right" >
+              Loading..
+                  </TableCell>
+                  </TableRow>
+                  }
               {dash_list && dash_list.map((val, i) => (
                 <TableBody key={i}>
                 <TableRow

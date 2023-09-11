@@ -57,7 +57,7 @@ const BedAvailability = () => {
   const [aadharno, setAadharno] = useState("");
   const [open, setOpen] = React.useState(false);
   const [price, setPrice] = React.useState(0);
-
+  const [btnactive, setBtnactive] = useState(true);
   // const [otp,setOtp] = useState('');
 
   const handleClickOpen = () => {
@@ -121,6 +121,19 @@ const BedAvailability = () => {
       });
   };
 
+  const data2 = {
+    patientName: username,
+    email: useremailid,
+    Adhar: aadharno,
+    age: parseInt(userage),
+    type: bedtype,
+    price:
+      bedtype === "General"
+        ? result.generalType.pricePerbad
+        : result.generalType.pricePerbad,
+  };
+  
+
   const handlebedbooking = () => {
     setVerified("");
     setPin1("");
@@ -130,17 +143,7 @@ const BedAvailability = () => {
     setPin5("");
     setPin6("");
     handleClickOpen();
-    const data2 = {
-      patientName: username,
-      email: useremailid,
-      Adhar: aadharno,
-      age: parseInt(userage),
-      type: bedtype,
-      price:
-        bedtype === "General"
-          ? result.generalType.pricePerbad
-          : result.generalType.pricePerbad,
-    };
+    
     // console.log(data2);
     axios
       .put(`${process.env.REACT_APP_API}bed/booking/${hospid}`, data2)
@@ -178,20 +181,24 @@ const BedAvailability = () => {
           </div>
           <div className="loc">
             <span>Location:</span>
+            {!result && <span className="ans">Loading...</span>}
             {result && <span className="ans">{result.hospitalId[0].city}</span>}
           </div>
           <div className="ContactNo loc">
             <span>Contact No:</span>
+            {!result && <span className="ans">Loading...</span>}
             {result && (
               <span className="ans">{result.hospitalId[0].mobileNum}</span>
             )}
           </div>
           <div className="otherfacility loc">
             <span className="loc">Other Facility:</span>
+            {!result && <span className="ans">Loading...</span>}
             {result && <span className="ans">{result.otherFacilities}</span>}
           </div>
           <div className="BedsAvailable loc">
             <span>Beds Available:</span>
+            {!result && <span className="ans">Loading...</span>}
             {result && (
               <span className="ans">
                 {result.generalType.availbility}(General) +{" "}
@@ -229,7 +236,7 @@ const BedAvailability = () => {
                   &#8377;{result.specialType.pricePerbad}
                 </span>
               )}
-              {bedtype === "" && <div className="blankspace"></div>}
+              {bedtype === "" && <div className="blankspace ans">XXX</div>}
             </div>
             <div className="loc">
               <span>Aadhar Card No:</span>
@@ -281,17 +288,20 @@ const BedAvailability = () => {
 
           <div className="bookbed">
             
-            {/* <Button variant="contained" disabled>
-              Disabled
-            </Button> */}
+        {!btnactive && <Button variant="contained"
+         sx={{ marginTop: "2vh", fontSize: "1.5rem", width: "30vw" }}
+        disabled>
+          Book a bed
+        </Button>}
 
-            <Button
+            {btnactive && <Button
               onClick={handlebedbooking}
               variant="contained"
               sx={{ marginTop: "2vh", fontSize: "1.5rem", width: "30vw" }}
             >
               Book a Bed
-            </Button>
+            </Button>}
+
           </div>
 
           {verified !== "done" && store !== "" && (
