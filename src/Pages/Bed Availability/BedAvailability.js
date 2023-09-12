@@ -121,18 +121,7 @@ const BedAvailability = () => {
       });
   };
 
-  const data2 = {
-    patientName: username,
-    email: useremailid,
-    Adhar: aadharno,
-    age: parseInt(userage),
-    type: bedtype,
-    price:
-      bedtype === "General"
-        ? result.generalType.pricePerbad
-        : result.generalType.pricePerbad,
-  };
-  
+
 
   const handlebedbooking = () => {
     setVerified("");
@@ -144,6 +133,18 @@ const BedAvailability = () => {
     setPin6("");
     handleClickOpen();
     
+    const data2 = {
+      patientName: username,
+      email: useremailid,
+      Adhar: aadharno,
+      age: parseInt(userage),
+      type: bedtype,
+      price:
+        bedtype === "General"
+          ? result.generalType.pricePerbad
+          : result.generalType.pricePerbad,
+    };
+     
     // console.log(data2);
     axios
       .put(`${process.env.REACT_APP_API}bed/booking/${hospid}`, data2)

@@ -25,7 +25,7 @@ const General = () => {
         data
       )
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setDash_list(res.data);
       })
       .catch((err) => {
@@ -35,7 +35,7 @@ const General = () => {
 
   const deletecell = (val) => {
   
-    const url = `${process.env.REACT_APP_API}/bed/booking/${val}`;
+    const url = `${process.env.REACT_APP_API}bed/booking/${val}`;
     if (val) {
       axios
         .delete(url)

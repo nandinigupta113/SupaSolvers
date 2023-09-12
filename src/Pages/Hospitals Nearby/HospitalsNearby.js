@@ -94,7 +94,6 @@ const HospitalsNearby = () => {
       <TextField
           label="pincode"
           id="outlined-size-small"
-          defaultValue=""
           size="small"
           value={pincode}
           type="number"
@@ -103,7 +102,6 @@ const HospitalsNearby = () => {
         <TextField
           label="City"
           id="outlined-size-small"
-          defaultValue=""
           size="small"
           type="text"
           value={city}
