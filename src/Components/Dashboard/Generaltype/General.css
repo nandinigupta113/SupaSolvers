@@ -2,7 +2,7 @@
     background: #2B96CC;
     padding: 1rem;
     overflow-y:scroll;
-    max-height: 50vh;
+    max-height: 35vh;
     -ms-overflow-style: none; 
     scrollbar-width: none; 
 }

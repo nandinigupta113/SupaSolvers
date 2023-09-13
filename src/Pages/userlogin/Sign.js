@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Sign.css";
 import logo from "../../Assets/SSlogo.png";
 import SignIncomp from "../../Components/Signpage/SignIn/SignIncomp";
