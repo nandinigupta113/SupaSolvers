@@ -40,7 +40,7 @@ const General = () => {
       axios
         .delete(url)
         .then((res) => {
-          console.log(res.data);
+          // console.log(res.data);
         })
         .catch((err) => {
           console.log(err);
@@ -68,7 +68,7 @@ const General = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {dash_list &&
+              {dash_list ?
                 dash_list.map((val, i) => (
                   <TableRow
                     key={i}
@@ -90,7 +90,7 @@ const General = () => {
                       {<DeleteSweepIcon />}
                     </TableCell>
                   </TableRow>
-                ))}
+                )) : null}
             </TableBody>
           </Table>
         </TableContainer>

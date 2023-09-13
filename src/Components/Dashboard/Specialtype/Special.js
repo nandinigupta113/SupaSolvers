@@ -69,7 +69,7 @@ const Special = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {dash_list &&
+              {dash_list ?
                 dash_list.map((val, i) => (
                   <TableRow
                     key={i}
@@ -92,7 +92,7 @@ const Special = () => {
                       {<DeleteSweepIcon />}
                     </TableCell>
                   </TableRow>
-                ))}
+                )) : null}
             </TableBody>
           </Table>
         </TableContainer>

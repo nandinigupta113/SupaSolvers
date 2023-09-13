@@ -15,7 +15,7 @@ const Dashboard = () => {
     const [dash_booking, setDash_booking] = useState("xxx");
     useEffect(() => {
       setDash_id(localStorage.getItem('_id'));
-      console.log(dash_id);
+      // console.log(dash_id);
       if(dash_id){
           axios.get(`${process.env.REACT_APP_API}hospital/${dash_id}`)
           .then((res)=>{
