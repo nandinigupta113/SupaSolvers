@@ -53,8 +53,8 @@ const BedAvailability = () => {
   // const [price, setPrice] = React.useState(0);
   // const [btnactive, setBtnactive] = useState(true);
   // const [otp,setOtp] = useState('');
- const {hospid} = location.state.hospid;
- const {btnactive} = useState(true);
+  const hospid = location.state.hospid;
+  const btnactive = true;
   const handleClickOpen = () => {
     setOpen(true);
   };
