@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../Info/Info.css";
 import TextField from "@mui/material/TextField";
 // import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
@@ -6,7 +6,7 @@ import HotelIcon from "@mui/icons-material/Hotel";
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import logo from "../../Assets/SSlogo.png";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
 const Updatebed = () => {
   const navigate = useNavigate(); 
   const handleupdatesubmit= (e) => {

@@ -1,19 +1,19 @@
-import React,{useState} from 'react'
+import React from 'react'
 import './Navbar.css'
-import PageviewIcon from '@mui/icons-material/Pageview';
-import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
+// import PageviewIcon from '@mui/icons-material/Pageview';
+// import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import logo from '../../Assets/SSlogo.png'
 import { useNavigate } from "react-router-dom";
-import Home from '../../Pages/Home/Home';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import axios from 'axios';
-import DialogTitle from '@mui/material/DialogTitle';
+// import Home from '../../Pages/Home/Home';
+// import Button from '@mui/material/Button';
+// import TextField from '@mui/material/TextField';
+// import Dialog from '@mui/material/Dialog';
+// import DialogActions from '@mui/material/DialogActions';
+// import DialogContent from '@mui/material/DialogContent';
+// import DialogContentText from '@mui/material/DialogContentText';
+// import axios from 'axios';
+// import DialogTitle from '@mui/material/DialogTitle';
 const Navbar = ({defaulth}) => {
  const navigate = useNavigate();
 
@@ -63,7 +63,7 @@ const Navbar = ({defaulth}) => {
     <div className='Navbar'>
          <div className='header'>
         <div className='logo'>
-          <img className='logoin' src={logo}/>
+          <img className='logoin' src={logo} alt=''/>
         </div>
         <div className='head'>
           <button className={defaulth === 'Home'? 'selectedpgchoice' : 'onlychoice'} onClick={(e) => {navigate('/');}} value="Home">Home</button>

@@ -27,7 +27,7 @@ const Slider = () => {
         </div>
 
         <div className='item hospt_img'>
-            <img src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2368&q=80'/>
+            <img alt= "" src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2368&q=80'/>
             <div style={{marginTop:'-3rem', background:' linear-gradient(to right,white, transparent)'}}>
             <div className='hospname'>Apallo Hospital, Delhi</div>
             </div>

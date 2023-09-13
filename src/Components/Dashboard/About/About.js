@@ -19,10 +19,9 @@ const About = () => {
             console.log(err);
         })
           }
-    }
+    }, [dash_id]
 
     )
-
   return (
     <div className="About">
       <div className="dash_headingg">

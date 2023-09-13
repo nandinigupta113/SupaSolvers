@@ -9,9 +9,9 @@ import Paper from "@mui/material/Paper";
 import axios from "axios";
 import DeleteSweepIcon from "@mui/icons-material/DeleteSweep";
 
-function createData(serialno, name, phone, aadhar, bedId) {
-  return { serialno, name, phone, aadhar, bedId };
-}
+// function createData(serialno, name, phone, aadhar, bedId) {
+//   return { serialno, name, phone, aadhar, bedId };
+// }
 
 const Special = () => {
   const [dash_list, setDash_list] = useState("");

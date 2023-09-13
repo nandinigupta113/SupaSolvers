@@ -26,7 +26,7 @@ const Bedstatus = () => {
             console.log(err);
         })
           }
-    }  )
+    },[dash_id])
 
 
 

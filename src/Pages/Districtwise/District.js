@@ -9,10 +9,10 @@ import Paper from "@mui/material/Paper";
 import Navbar from "../../Components/Navbar/Navbar";
 import "./District.css";
 import axios from "axios";
-import DeleteSweepIcon from "@mui/icons-material/DeleteSweep";
-function createData(serialno, name, phone, aadhar, bedId) {
-  return { serialno, name, phone, aadhar, bedId };
-}
+// import DeleteSweepIcon from "@mui/icons-material/DeleteSweep";
+// function createData(serialno, name, phone, aadhar, bedId) {
+//   return { serialno, name, phone, aadhar, bedId };
+// }
 const District = () => {
   const [dash_list, setDash_list] = useState("");
 

@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./BedAvailability.css";
 import Hosprefimg from "../../Assets/hosprefimg.png";
-import StarIcon from "@mui/icons-material/Star";
 import Navbar from "../../Components/Navbar/Navbar";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -10,15 +9,10 @@ import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-import TextField from "@mui/material/TextField";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import Footer from '../../Components/Footer/Footer';
-// import Support from '../../Components/Support/Support';
-import Select, { SelectChangeEvent } from "@mui/material/Select";
-import { fontSize } from "@mui/system";
+import Select from "@mui/material/Select";
 import { useLocation } from "react-router";
 import axios from "axios";
 
@@ -32,12 +26,12 @@ const BedAvailability = () => {
   const otp5Ref = useRef(null);
   const otp6Ref = useRef(null);
 
-  const [otp1, setOtp1] = useState("");
-  const [otp2, setOtp2] = useState("");
-  const [otp3, setOtp3] = useState("");
-  const [otp4, setOtp4] = useState("");
-  const [otp5, setOtp5] = useState("");
-  const [otp6, setOtp6] = useState("");
+  const [, setOtp1] = useState("");
+  const [, setOtp2] = useState("");
+  const [, setOtp3] = useState("");
+  const [, setOtp4] = useState("");
+  const [, setOtp5] = useState("");
+  const [, setOtp6] = useState("");
 
   const [pin1, setPin1] = useState([""]);
   const [pin2, setPin2] = useState("");
@@ -48,7 +42,7 @@ const BedAvailability = () => {
 
   const [verified, setVerified] = useState("");
   const [store, setStore] = useState("");
-  const [hospid, setHospid] = useState(location.state.hospid);
+  // const [hospid, setHospid] = useState(location.state.hospid);
   const [bedtype, setBedtype] = useState("");
   const [result, setResult] = useState();
   const [useremailid, setUseremailid] = useState("");
@@ -56,10 +50,11 @@ const BedAvailability = () => {
   const [userage, setUserage] = useState("");
   const [aadharno, setAadharno] = useState("");
   const [open, setOpen] = React.useState(false);
-  const [price, setPrice] = React.useState(0);
-  const [btnactive, setBtnactive] = useState(true);
+  // const [price, setPrice] = React.useState(0);
+  // const [btnactive, setBtnactive] = useState(true);
   // const [otp,setOtp] = useState('');
-
+ const {hospid} = location.state.hospid;
+ const {btnactive} = useState(true);
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -175,10 +170,6 @@ const BedAvailability = () => {
           <div className="titlehosp">
             {result && <span>{result.hospitalId[0].name}</span>}
             {!result && <span>Loading...</span>}
-            {/* <StarIcon sx={{ marginTop: "3rem", marginLeft: "1rem" }} />
-      <StarIcon sx={{ marginTop: "3rem", marginLeft: "1rem" }} />
-      <StarIcon sx={{ marginTop: "3rem", marginLeft: "1rem" }} />
-      <StarIcon sx={{ marginTop: "3rem", marginLeft: "1rem" }} /> */}
           </div>
           <div className="loc">
             <span>Location:</span>

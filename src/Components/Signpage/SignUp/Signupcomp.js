@@ -15,11 +15,11 @@ const Signupcomp = () => {
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
   const [psswd, setPsswd] = useState("");
-  const [hospitalId, setHospitalId] = useState("");
+  // const [hospitalId, setHospitalId] = useState("");
   const [hospitaltype, setHospitaltype] = useState("");
   const [pincode, setPincode] = useState("");
   const [ans, setans] = useState(false);
-  let token;
+  // let token;
   const handlesignup = (e) =>{
     e.preventDefault();
     setans(true);

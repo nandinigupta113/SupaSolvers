@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Info.css";
 import TextField from "@mui/material/TextField";
 import CircularProgress from '@mui/material/CircularProgress';
-import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
+// import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
 import HotelIcon from "@mui/icons-material/Hotel";
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import logo from "../../Assets/SSlogo.png";

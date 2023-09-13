@@ -12,7 +12,7 @@ const HospitalsNearby = () => {
   const [hospdata, setHospdata] = useState();
   const [pincode, setPincode] = useState('');
   const [city, setCity] = useState('');
-  const [happen, setHappen] = useState('');
+  // const [happen, setHappen] = useState('');
    useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_API}all/hospitals`)
@@ -29,7 +29,7 @@ const HospitalsNearby = () => {
 
   const handlefilter = () =>{
 
-    if(pincode !== "" && city == ""){
+    if(pincode !== "" && city === ""){
       const updatedItems = hospdata.filter((curr) => {
         // console.log(curr.pincode);
         return (
@@ -38,7 +38,7 @@ const HospitalsNearby = () => {
       })
       setHospdata(updatedItems);
     }
-    else if(pincode == "" && city !== ""){
+    else if(pincode === "" && city !== ""){
       const updatedItems = hospdata.filter((curr) => {
         return (
           curr.city === city

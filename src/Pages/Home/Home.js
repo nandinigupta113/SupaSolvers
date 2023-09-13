@@ -1,11 +1,11 @@
-import React,{useState} from 'react'
+import React from 'react'
 import './Home.css'
 import Navbar from '../../Components/Navbar/Navbar';
 import Slider from '../../Components/Slider/Slider';
 import Footer from '../../Components/Footer/Footer';
 import Support from '../../Components/Support/Support';
 import logo from '../../Assets/SSlogo.png'
-import Chat from '../../Components/Chat/Chat'
+// import Chat from '../../Components/Chat/Chat'
 
 import { useNavigate } from "react-router-dom";
 const Home = () => {
@@ -31,7 +31,7 @@ const Home = () => {
             <span>District Wise Bed Availability</span>
         </div>
           <div className='logodiv'>
-          <img src={logo}/>
+          <img src={logo} alt=''/>
           </div>
         </div>
         </div>

@@ -12,7 +12,7 @@ const Dashboard = () => {
 
     const [dash_id, setDash_id] = useState("");
     const [dash_result, setDash_result] = useState("");
-    const [dash_booking, setDash_booking] = useState("xxx");
+    // const [dash_booking, setDash_booking] = useState("xxx");
     useEffect(() => {
       setDash_id(localStorage.getItem('_id'));
       // console.log(dash_id);
@@ -27,7 +27,7 @@ const Dashboard = () => {
               console.log(err);
           })
             }
-      }
+      },[dash_id]
   
       )
 

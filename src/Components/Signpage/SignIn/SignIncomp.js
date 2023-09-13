@@ -10,9 +10,9 @@ const SignIncomp = () => {
   const navigate = useNavigate();
   const [userId,setUserId] = useState("");
   const [psswd,setPsswd] = useState("");
-  const [hospid,setHospid] = useState('');
+  // const [hospid,setHospid] = useState('');
   const [ans, setans] = useState(false);
-  let token;
+  // let token;
   const handlesignin = (e) => {
     setans(true);
     e.preventDefault();

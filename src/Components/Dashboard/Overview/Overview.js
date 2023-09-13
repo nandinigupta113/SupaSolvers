@@ -1,6 +1,6 @@
 import "./Overview.css";
-import React, { PureComponent } from 'react';
-import { PieChart, Pie,Tooltip, Sector, Cell, ResponsiveContainer } from 'recharts';
+import React from 'react';
+import { PieChart, Pie,Tooltip} from 'recharts';
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";

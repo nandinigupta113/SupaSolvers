@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 // import Button from '@mui/material/Button';
 import Button from '@mui/material/Button';
-import CircularProgress from '@mui/material/CircularProgress';
-import { width } from "@mui/system";
-import { LocalDining } from "@mui/icons-material";
+// import CircularProgress from '@mui/material/CircularProgress';
+// import { width } from "@mui/system";
+// import { LocalDining } from "@mui/icons-material";
 const Hosplist = ({ email, hospid, name, mobilenum, city }) => {
   const navigate = useNavigate();
   const [beds_avail, setBeds_avail] = useState("");
